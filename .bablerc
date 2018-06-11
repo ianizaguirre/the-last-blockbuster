@@ -1,0 +1,23 @@
+{
+	"presets": [
+		"react",
+		["env", {
+			"targets": {
+				"browsers": "last 2 versions"
+			},
+			"loose": true,   // if you do edgecase stuff set this to true to avoid problems
+			"modules": false // "babel dont touch the modules, webpack will worry about it"
+		}]
+	],
+	"plugins": [
+		"react-hot-loader/babel",
+		"babel-plugin-transform-class-properties"
+	],
+	"env": {
+		"test": {
+			"plugins": [
+				"babel-plugin-transform-es2015-modules-commonjs"
+			]
+		}
+	}
+}

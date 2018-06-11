@@ -12,7 +12,9 @@
         "server": "./node_modules/.bin/webpack-dev-server"
     },
     "jest": {
-        "snapshotSerializers": ["jest-serializer-enzyme"]
+        "snapshotSerializers": [
+            "jest-serializer-enzyme"
+        ]
     },
     "dependencies": {
         "axios": "0.16.1",
@@ -57,7 +59,7 @@
         "eslint-config-standard": "^11.0.0-beta.0",
         "eslint-loader": "1.7.1",
         "eslint-plugin-flow": "2.29.1",
-        "eslint-plugin-flowtype": "^2.42.0",
+        "eslint-plugin-flowtype": "^2.49.3",
         "eslint-plugin-import": "2.3.0",
         "eslint-plugin-jsx-a11y": "5.0.3",
         "eslint-plugin-node": "^5.2.1",
