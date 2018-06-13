@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import preload from '../../data.json';
-import Search from '../Search';
-import ShowCard from '../ShowCard';
+import Search from '../containers/Search';
+import ShowCard from '../components/ShowCard';
 
 test('Search renders correctly', () => {
 	const component = shallow(<Search />);
