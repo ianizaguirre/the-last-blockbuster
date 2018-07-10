@@ -1,14 +1,14 @@
-// @flow
+/* eslint-disable */
+import React, { Fragment } from 'react';
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from './Header';
+
+// import { Link } from 'react-router-dom';
 
 const Landing = () => (
-  <div className="landing">
-    <h1> Album Search</h1>
-    <input type="text" placeholder="Search" />
-    <Link to="/search"> or Browse All</Link>
-  </div>
+  <Fragment>
+    <Header />
+  </Fragment>
 );
 
 export default Landing;

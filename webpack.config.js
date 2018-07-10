@@ -7,7 +7,7 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './src/index.jsx',
+    './src/index.jsx'
   ],
   devtool: 'cheap-eval-source-map',
   output: {
@@ -28,12 +28,11 @@ module.exports = {
     reasons: true,
     chunks: true
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ],
+  mode: 'development',
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()],
   module: {
-    rules: [{
+    rules: [
+      {
         enforce: 'pre',
         test: /\.jsx?$/,
         loader: 'eslint-loader',

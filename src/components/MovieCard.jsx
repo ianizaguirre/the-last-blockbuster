@@ -14,7 +14,7 @@ class MovieCard extends Component {
     const data = this.props.title;
     return (
       <div>
-        <h1>TITLE</h1>
+        <h1>TITLE...</h1>
         <p>{data}</p>
       </div>
     );
