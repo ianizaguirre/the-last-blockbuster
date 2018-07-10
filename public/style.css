@@ -434,7 +434,7 @@ th {
 html {
   font-family: Helvetica Neue, Helvetica, sans-serif;
 }
-
+/*
 .app {
   position: relative;
   width: 100%;
@@ -690,4 +690,4 @@ header > input {
 
 .details > header + section {
   margin-top: 25px;
-}
+} */

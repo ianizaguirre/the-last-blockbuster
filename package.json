@@ -74,9 +74,9 @@
         "react-test-renderer": "15.5.4",
         "webpack-dev-server": "2.4.5"
     },
-    "name": "album-search",
+    "name": "the-last-blockbuster",
     "version": "1.0.0",
-    "description": "Album Search React Project",
+    "description": "Movie Search React Project",
     "main": "server.js",
     "repository": "git@github.com:ianizaguirre/album-search.git",
     "author": "Ian Izaguirre",
