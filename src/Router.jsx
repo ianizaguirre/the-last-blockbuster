@@ -3,7 +3,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import type { Match } from 'react-router-dom';
-import Landing from './components/Landing';
+import App from './components/App';
 import Search from './containers/Search';
 import MoviesNowPlaying from './containers/MoviesNowPlaying';
 import Details from './components/Details';
@@ -15,7 +15,7 @@ const Router = () => (
   <BrowserRouter>
     <div className="app">
       <Switch>
-        <Route exact path="/" component={Landing} />
+        <Route exact path="/" component={App} />
         <Route exact path="/now" component={MoviesNowPlaying} />
         <Route path="/search" component={props => <Search shows={preload.shows} {...props} />} />
         <Route
