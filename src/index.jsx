@@ -3,6 +3,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { ThemeProvider, injectGlobal } from 'styled-components';
+import theme from './theme';
 import Router from './Router';
 
 // Global style
@@ -16,10 +17,6 @@ injectGlobal`
     /* font-family: cursive; */
   }
 `;
-
-const theme = {
-  headerHeight: '95px'
-};
 
 const renderApp = () => {
   render(

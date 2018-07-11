@@ -27,7 +27,7 @@ const Gold = styled.div`
 `;
 const Red = styled.div`
   background: red;
-  height: 95px;
+  min-height: 95px;
 `;
 const Black = styled.div`
   background: #18191e;

@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 // import Header from './Header';
 import LeftColumn from './LeftColumn';
 import RightColumn from './RightColumn';
+import Footer from './Footer';
 
 import styled from 'styled-components';
 
@@ -26,6 +27,7 @@ const App = () => (
         <LeftColumn />
         <RightColumn />
       </FlexContainer>
+      <Footer />
     </Wrapper>
   </Fragment>
 );

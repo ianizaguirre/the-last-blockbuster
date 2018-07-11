@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React, { Fragment, Component } from 'react';
 
+import { Gutter } from './../styles';
+
 import RightHeader from './RightHeader';
 import RightInfoBar from './RightInfoBar';
 import Showcase from './Showcase';
@@ -12,11 +14,6 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const Gutter = styled.div`
-  width: 95%;
-  margin: 0 auto;
-`;
-
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,7 +22,7 @@ const FlexContainer = styled.div`
 
 const Pink = styled.div`
   background: pink;
-  height: ${props => props.theme.headerHeight};
+  min-height: ${props => props.theme.headerHeight};
 `;
 
 const Grey = styled.div`
