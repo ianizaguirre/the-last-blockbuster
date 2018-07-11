@@ -8,11 +8,6 @@ import LeftColumn from './LeftColumn';
 
 // import { Link } from 'react-router-dom';
 
-// const Gutter = styled.div`
-//   width: 90%;
-//   margin: 0 auto;
-// `;
-
 const App = () => (
   <Fragment>
     <LeftColumn />

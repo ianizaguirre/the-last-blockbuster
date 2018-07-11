@@ -1,8 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Heading = styled.h3`
+  font-weight: bold;
+  color: green;
+`;
 
 const LeftInfoBar = () => (
   <div>
-    <p> I am LeftInfoBar </p>
+    <Heading> # Menu </Heading>
   </div>
 );
 
