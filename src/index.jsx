@@ -2,11 +2,32 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { injectGlobal } from 'styled-components';
+import { ThemeProvider, injectGlobal } from 'styled-components';
 import Router from './Router';
 
+// Global style
+// eslint-disable-next-line
+injectGlobal`
+  body {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    /* margin: 0 auto; */
+    /* font-family: cursive; */
+  }
+`;
+
+const theme = {
+  headerHeight: '95px'
+};
+
 const renderApp = () => {
-  render(<Router />, document.getElementById('app'));
+  render(
+    <ThemeProvider theme={theme}>
+      <Router />
+    </ThemeProvider>,
+    document.getElementById('app')
+  );
 };
 
 renderApp();
@@ -16,14 +37,3 @@ if (module.hot) {
     renderApp();
   });
 }
-
-// Global style
-// eslint-disable-next-line
-injectGlobal`
-  body {
-    background-color: #fff;
-    width: 100%;
-    margin: 0 auto;
-    /* font-family: cursive; */
-  }
-`;

@@ -18,13 +18,16 @@ const Gutter = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 const Gold = styled.div`
   background: gold;
+  height: 100%;
 `;
 const Red = styled.div`
   background: red;
+  height: 95px;
 `;
 const Black = styled.div`
   background: #18191e;

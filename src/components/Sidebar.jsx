@@ -1,17 +1,20 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
-// import LeftHeader from './LeftHeader';
-// import LeftInfoBar from './LeftInfoBar';
-
-// const Wrapper = styled.div`
-//   background: gold;
-// `;
+const Ul = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
+const Li = styled.li`
+  display: block;
+`;
 
 const Sidebar = () => (
-  <div>
-    <p> I am Sidebar </p>
-  </div>
+  <Ul>
+    <Li> In Theaters </Li>
+    <Li> Popular </Li>
+    <Li> New Releases</Li>
+  </Ul>
 );
 
 export default Sidebar;

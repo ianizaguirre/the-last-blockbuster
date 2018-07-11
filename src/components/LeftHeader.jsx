@@ -2,19 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Image = styled.img`
-  width: 150px;
-  float: left;
+  width: 137px;
+
   margin-right: 10px;
 `;
 
-// const Wrapper = styled.div`
-//   background: red;
-// `;
+const Wrapper = styled.div`
+  background: inherit;
+`;
 
 const LeftHeader = () => (
-  <div>
-    <Image alt="logo" src="https://cdn.freebiesupply.com/logos/large/2x/blockbuster-logo-png-transparent.png" />
-  </div>
+  <Wrapper>
+    <Image alt="logo" src="http://www.blockbuster.com.au/BlockbusterExpress/assets/images/blockbuster_logo.png" />
+  </Wrapper>
 );
 
 export default LeftHeader;
