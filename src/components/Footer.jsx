@@ -5,13 +5,13 @@ import styled from 'styled-components';
 const Wrapper = styled.footer`
   background: silver;
   width: 100%;
-  padding: 15px;
+  padding: 2px;
 `;
 
 const Footer = () => (
   <Fragment>
     <Wrapper>
-      <p> This is the Footer </p>
+      <br />
     </Wrapper>
   </Fragment>
 );

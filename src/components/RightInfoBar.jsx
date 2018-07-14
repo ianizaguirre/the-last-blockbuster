@@ -2,15 +2,22 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  height: 48px;
+  margin: 0 auto;
+  max-width: 50%;
+`;
+
 const Heading = styled.h3`
   font-weight: bold;
-  color: green;
+  color: #72727a;
+  margin: 0;
 `;
 
 const RightInfoBar = () => (
-  <div>
+  <Wrapper>
     <Heading> I Am RightInfoBar </Heading>
-  </div>
+  </Wrapper>
 );
 
 export default RightInfoBar;

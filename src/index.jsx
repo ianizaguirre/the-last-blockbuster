@@ -9,12 +9,15 @@ import Router from './Router';
 // Global style
 // eslint-disable-next-line
 injectGlobal`
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'); */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Open+Sans:300,400,600,700');
+
   body {
     background-color: #fff;
     width: 100%;
     height: 100%;
     /* margin: 0 auto; */
-    /* font-family: cursive; */
+    font-family: 'Open Sans', sans-serif;
   }
 `;
 

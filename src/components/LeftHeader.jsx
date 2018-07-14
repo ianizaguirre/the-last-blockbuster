@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.img`
-  width: 137px;
-
-  margin-right: 10px;
-`;
-
 const Wrapper = styled.div`
   background: inherit;
+  max-width: 50%;
+  margin: 0 auto;
 `;
+
+const Image = styled.img`
+  width: 137px;
+`;
+// margin-left: -10px;
+// margin-right: 10px;
 
 const LeftHeader = () => (
   <Wrapper>
