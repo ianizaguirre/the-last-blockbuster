@@ -6,21 +6,18 @@ import MoviesInTheaters from './../containers/MoviesInTheaters';
 // import MovieCard from './MovieCard';
 // <MovieCard />;
 
-// const Wrapper = styled.div`
-
-// `;
+const ShowcaseGutter = styled.div`
+  background: green;
+  width: 95%;
+  margin: 0 auto;
+`;
 
 class Showcase extends Component {
   render() {
     return (
-      <Fragment>
+      <ShowcaseGutter>
         <MoviesInTheaters />
-
-        <br />
-        <div>
-          <p> --------------------------- THIS IS THE END --------------------------------</p>
-        </div>
-      </Fragment>
+      </ShowcaseGutter>
     );
   }
 }

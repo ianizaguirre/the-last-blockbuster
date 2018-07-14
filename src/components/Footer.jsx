@@ -6,6 +6,7 @@ const Wrapper = styled.footer`
   background: silver;
   width: 100%;
   padding: 2px;
+  margin-top: 30px;
 `;
 
 const Footer = () => (

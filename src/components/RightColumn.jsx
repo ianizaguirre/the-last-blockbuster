@@ -2,8 +2,8 @@
 import React, { Fragment, Component } from 'react';
 
 import styled from 'styled-components';
-import { FlexContainer } from './../styles';
-
+// import { FlexContainer } from './../styles';
+//  <FlexContainer column>
 import Footer from './Footer';
 import RightHeader from './RightHeader';
 import RightInfoBar from './RightInfoBar';
@@ -22,26 +22,33 @@ const HeaderWrap = styled.div`
 
 const InfoWrap = styled.div`
   background: #24252a;
+  margin-bottom: 30px;
 `;
 
-const Gutter = styled.div`
-  width: 95%;
-  margin: 0 auto;
-`;
+// const Gutter = styled.div`
+//   width: 95%;
+//   margin: 0 auto;
+// `;
 
 const ShowCaseWrapper = styled.div`
   margin: 0 auto;
 `;
+
+const FlexContainer = styled.div`
+  display: flex;
+
+  flex-direction: column;
+  height: 100%;
+`;
+
 class RightColumn extends Component {
   render() {
     return (
       <Fragment>
         <Wrapper>
-          <FlexContainer column>
+          <FlexContainer>
             <HeaderWrap>
-              <Gutter>
-                <RightHeader />
-              </Gutter>
+              <RightHeader />
             </HeaderWrap>
             <InfoWrap>
               <RightInfoBar />

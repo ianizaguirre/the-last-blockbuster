@@ -21,13 +21,15 @@ import Services from './../services';
 //   background: green;
 // `;
 
+// grid-column-gap: 30px;
+// grid-row-gap: 25px;
+
+// grid-template-columns: 200px 200px 200px 200px 200px 200px;
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px 200px 200px;
   grid-template-rows: auto;
-  grid-column-gap: 30px;
-  grid-row-gap: 25px;
-  justify-items: center;
+  grid-gap: 36px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 `;
 
 class MoviesNowPlaying extends Component {

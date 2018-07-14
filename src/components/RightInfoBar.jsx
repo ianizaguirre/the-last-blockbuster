@@ -11,14 +11,15 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h3`
+  font-size: 17px;
   font-weight: bold;
-  color: #f5f5f6;
+  color: #f5f5f6d6;
   margin: 0;
 `;
 
 const RightInfoBar = () => (
   <Wrapper>
-    <Heading> I Am RightInfoBar </Heading>
+    <Heading> right info bar </Heading>
   </Wrapper>
 );
 

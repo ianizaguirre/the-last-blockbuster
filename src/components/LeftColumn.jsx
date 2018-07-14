@@ -24,6 +24,7 @@ const FlexContainer = styled.div`
 
 const InfoWrap = styled.div`
   background: #18191e;
+  margin-bottom: 30px;
 `;
 const HeaderWrap = styled.div`
   background: #fff;

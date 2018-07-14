@@ -24,12 +24,11 @@ const FlexContainer = styled.div`
   flex-direction: column;
 `;
 const Image = styled.img`
-  width: 150px;
-  float: left;
-  margin-right: 10px;
+  margin: 0 auto;
+  width: 100%;
 `;
 const Title = styled.h4`
-  width: 150px;
+  font-weight: 600;
 `;
 
 class MovieCard extends Component {

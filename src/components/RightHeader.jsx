@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 import Search from './../containers/Search';
 
-const FlexContainer = styled.div`
-  display: flex;
+const SearchGutter = styled.div`
+  width: 95%;
+  margin: 0 auto;
 `;
 
 // const Wrapper = styled.div`
@@ -14,9 +15,9 @@ const FlexContainer = styled.div`
 // `;
 
 const RightHeader = () => (
-  <FlexContainer>
+  <SearchGutter>
     <Search />
-  </FlexContainer>
+  </SearchGutter>
 );
 
 export default RightHeader;
