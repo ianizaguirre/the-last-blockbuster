@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import type { Match } from 'react-router-dom';
 import App from './components/App';
 import Search from './containers/Search';
-import MoviesNowPlaying from './containers/MoviesNowPlaying';
+import MoviesInTheaters from './containers/MoviesInTheaters';
 import Details from './components/Details';
 import preload from './../data.json';
 
@@ -16,7 +16,7 @@ const Router = () => (
     <div className="app">
       <Switch>
         <Route exact path="/" component={App} />
-        <Route exact path="/now" component={MoviesNowPlaying} />
+        <Route exact path="/now" component={MoviesInTheaters} />
         <Route path="/search" component={props => <Search shows={preload.shows} {...props} />} />
         <Route
           path="/details/:id"

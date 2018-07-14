@@ -26,7 +26,10 @@ const InfoWrap = styled.div`
   background: #18191e;
 `;
 const HeaderWrap = styled.div`
-  background: white;
+  background: #fff;
+  min-height: ${props => props.theme.headerHeight};
+  display: flex;
+  align-items: center;
 `;
 
 class LeftColumn extends Component {

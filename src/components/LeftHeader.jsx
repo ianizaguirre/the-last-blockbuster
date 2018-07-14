@@ -9,9 +9,8 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   width: 137px;
+  margin-left: -10px;
 `;
-// margin-left: -10px;
-// margin-right: 10px;
 
 const LeftHeader = () => (
   <Wrapper>

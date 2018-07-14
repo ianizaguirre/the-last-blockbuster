@@ -6,8 +6,9 @@ const Wrapper = styled.div`
   height: 48px;
   margin: 0 auto;
   max-width: 50%;
+  display: flex;
+  align-items: center;
 `;
-// padding: 15px 30px;
 
 const Heading = styled.h3`
   font-weight: bold;

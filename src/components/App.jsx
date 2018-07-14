@@ -7,7 +7,6 @@ import styled from 'styled-components';
 // import Header from './Header';
 import LeftColumn from './LeftColumn';
 import RightColumn from './RightColumn';
-import Footer from './Footer';
 
 // import { Link } from 'react-router-dom';
 
@@ -21,8 +20,8 @@ const LeftWrapper = styled.div`
   min-width: 240px;
 `;
 
+// background: lime;
 const RightWrapper = styled.div`
-  background: lime;
   flex 2 1 85%;
 `;
 //  align-items: stretch;
@@ -43,7 +42,6 @@ const App = () => (
           <RightColumn />
         </RightWrapper>
       </FlexContainer>
-      <Footer />
     </Wrapper>
   </Fragment>
 );

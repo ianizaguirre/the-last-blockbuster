@@ -6,11 +6,13 @@ const Wrapper = styled.div`
   height: 48px;
   margin: 0 auto;
   max-width: 50%;
+  display: flex;
+  align-items: center;
 `;
 
 const Heading = styled.h3`
   font-weight: bold;
-  color: #72727a;
+  color: #f5f5f6;
   margin: 0;
 `;
 

@@ -2,8 +2,9 @@
 import React, { Fragment, Component } from 'react';
 
 import styled from 'styled-components';
-import { Gutter, FlexContainer } from './../styles';
+import { FlexContainer } from './../styles';
 
+import Footer from './Footer';
 import RightHeader from './RightHeader';
 import RightInfoBar from './RightInfoBar';
 import Showcase from './Showcase';
@@ -12,39 +13,46 @@ const Wrapper = styled.div`
   background: inherit;
 `;
 
-const Pink = styled.div`
-  background: pink;
+const HeaderWrap = styled.div`
+  background: #fff;
   min-height: ${props => props.theme.headerHeight};
+  display: flex;
+  align-items: center;
 `;
 
 const InfoWrap = styled.div`
   background: #24252a;
 `;
 
-// const Blue = styled.div`
-//   background: blue;
-// `;
+const Gutter = styled.div`
+  width: 95%;
+  margin: 0 auto;
+`;
 
+const ShowCaseWrapper = styled.div`
+  margin: 0 auto;
+`;
 class RightColumn extends Component {
   render() {
     return (
       <Fragment>
         <Wrapper>
           <FlexContainer column>
-            <Pink>
+            <HeaderWrap>
               <Gutter>
                 <RightHeader />
               </Gutter>
-            </Pink>
+            </HeaderWrap>
             <InfoWrap>
               <RightInfoBar />
             </InfoWrap>
 
-            <Gutter>
+            <ShowCaseWrapper>
               <Showcase />
-            </Gutter>
+            </ShowCaseWrapper>
           </FlexContainer>
         </Wrapper>
+        <Footer />
       </Fragment>
     );
   }
