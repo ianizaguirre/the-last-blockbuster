@@ -34,7 +34,7 @@ const Image = styled.img`
 `;
 const Title = styled.h4`
   font-size: ${props => props.theme.h4Size};
-  font-weight: ${props => props.theme.h4Weight};
+  font-weight: ${props => props.theme.semiBold};
   font-family: ${props => props.theme.secondaryFontFamily};
   letter-spacing: 0.5px;
 `;

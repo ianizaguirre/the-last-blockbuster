@@ -1,4 +1,3 @@
-// @flow
 /* eslint-disable */
 
 import React, { Component } from 'react';
@@ -22,7 +21,7 @@ class Search extends Component {
   props: {
     shows: Array<Show>
   };
-  handleSearchTermChange = (event: SyntheticKeyboardEvent & { target: HTMLInputElement }) => {
+  handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
   render() {

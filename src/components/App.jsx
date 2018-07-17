@@ -22,13 +22,13 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 0.6fr 2fr 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 'sidebar-1 content-main-1 content-main-2';
+  grid-template-areas: 'sidePanel content-main-1 content-main-2';
 `;
 // grid-template-columns: 200px 1fr 2fr 1fr;
 // grid-template-areas: 'sidebar-1 header content-main-1 content-main-2';
 const SidePanelWrapper = styled.div`
   background: ${props => props.theme.primaryYellow};
-  grid-column: sidebar-1;
+  grid-column: sidePanel;
 `;
 // grid-column: span 1;
 

@@ -6,7 +6,7 @@ const theme = {
   /* ==== FontFamily ==== */
   secondaryFontFamily: 'Montserrat',
   /* ==== Font Weight ==== */
-  h4Weight: 600,
+  semiBold: 500,
   /* ==== Font Size ==== */
   h4Size: '0.9rem'
 };

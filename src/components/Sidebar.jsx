@@ -11,12 +11,14 @@ const Ul = styled.ul`
 // background: red;
 const Li = styled.li`
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-weight: ${props => props.theme.semiBold};
+  font-family: ${props => props.theme.secondaryFontFamily};
   padding: 15px 0;
   cursor: pointer;
 
   &:hover {
     background: #f1b318;
+    color: #f6f6f6;
   }
 `;
 
