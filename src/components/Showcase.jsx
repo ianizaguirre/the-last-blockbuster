@@ -14,6 +14,9 @@ const GridContainer = styled.div`
   grid-template-rows: auto;
   grid-gap: 36px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 class Showcase extends Component {

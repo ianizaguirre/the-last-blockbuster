@@ -4,15 +4,16 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 // import { FlexContainer } from './../styles';
 
-// import Header from './Header';
 import LeftColumn from './LeftColumn';
+
 import RightColumn from './RightColumn';
+import RightPanel from './Panel';
+
+// import Footer from './Footer';
 
 // import { Link } from 'react-router-dom';
 
-const Wrapper = styled.div`
-  background: inherit;
-`;
+const Wrapper = styled.div``;
 
 // display: flex;
 // height: 100%;
@@ -25,21 +26,30 @@ const GridContainer = styled.div`
   grid-template-rows: auto;
   grid-template-areas: 'sidebar-1 content-main-1 content-main-2';
 `;
-
-// flex: 1 2 15%;
-// min-width: 240px;
+// grid-template-columns: 200px 1fr 2fr 1fr;
+// grid-template-areas: 'sidebar-1 header content-main-1 content-main-2';
 const LeftWrapper = styled.div`
   background: ${props => props.theme.primaryYellow};
+  grid-column: sidebar-1;
 `;
 // grid-column: span 1;
 
-// background: lime;
-// flex 2 1 85%;
 // grid-column: span 5;
-const RightWrapper = styled.div`
+
+const GridRow = styled.div`
+  grid-column-start: content-main-1;
   grid-column-end: content-main-2;
 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const PannelWrapper = styled.div``;
+
+const RightWrapper = styled.div`
   grid-column-start: content-main-1;
+  grid-column-end: content-main-2;
 
   overflow: auto;
 
@@ -53,9 +63,14 @@ const App = () => (
         <LeftWrapper>
           <LeftColumn />
         </LeftWrapper>
-        <RightWrapper>
-          <RightColumn />
-        </RightWrapper>
+        <GridRow>
+          <PannelWrapper>
+            <RightPanel />
+          </PannelWrapper>
+          <RightWrapper>
+            <RightColumn />
+          </RightWrapper>
+        </GridRow>
       </GridContainer>
     </Wrapper>
   </Fragment>
