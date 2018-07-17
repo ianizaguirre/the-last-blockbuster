@@ -16,6 +16,7 @@ const FlexContainer = styled.div`
 /* margin-bottom: 15 .... + 15 from li padding = 30px */
 const InfoWrap = styled.div`
   background: #18191e;
+  padding: 0.5em;
   margin-bottom: 15px;
 `;
 
@@ -26,7 +27,7 @@ const HeaderWrap = styled.div`
   align-items: center;
 `;
 
-class LeftColumn extends Component {
+class SidePanel extends Component {
   render() {
     return (
       <FlexContainer>
@@ -44,4 +45,4 @@ class LeftColumn extends Component {
   }
 }
 
-export default LeftColumn;
+export default SidePanel;

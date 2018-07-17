@@ -11,13 +11,6 @@ import Showcase from './Showcase';
 const Wrapper = styled.div`
   background: inherit;
 `;
-// const FlexContainer = styled.div`
-//   display: flex;
-
-//   flex-direction: column;
-//   height: 100%;
-// `;
-const Container = styled.div``;
 
 const HeaderWrap = styled.div`
   background: #fff;
@@ -28,23 +21,22 @@ const HeaderWrap = styled.div`
 
 const InfoWrap = styled.div`
   background: #24252a;
+  padding: 0.5em;
 `;
 
-class Panel extends Component {
+class MainPanel extends Component {
   render() {
     return (
       <Fragment>
-        <Container>
-          <HeaderWrap>
-            <RightHeader />
-          </HeaderWrap>
-          <InfoWrap>
-            <RightInfoBar />
-          </InfoWrap>
-        </Container>
+        <HeaderWrap>
+          <RightHeader />
+        </HeaderWrap>
+        <InfoWrap>
+          <RightInfoBar />
+        </InfoWrap>
       </Fragment>
     );
   }
 }
 
-export default Panel;
+export default MainPanel;
