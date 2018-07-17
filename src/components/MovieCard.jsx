@@ -28,7 +28,9 @@ const Image = styled.img`
   width: 100%;
 `;
 const Title = styled.h4`
-  font-weight: 600;
+  font-size: ${props => props.theme.h4Size};
+  font-weight: ${props => props.theme.h4Weight};
+  font-family: ${props => props.theme.secondaryFontFamily};
 `;
 
 class MovieCard extends Component {
