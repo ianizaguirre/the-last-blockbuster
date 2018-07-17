@@ -8,7 +8,7 @@ const theme = {
   /* ==== Font Weight ==== */
   h4Weight: 600,
   /* ==== Font Size ==== */
-  h4Size: '1rem'
+  h4Size: '0.9rem'
 };
 
 export default theme;

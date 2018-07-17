@@ -6,18 +6,22 @@ import MoviesInTheaters from './../containers/MoviesInTheaters';
 // import MovieCard from './MovieCard';
 // <MovieCard />;
 
-const ShowcaseGutter = styled.div`
-  background: green;
-  width: 95%;
-  margin: 0 auto;
+// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+// grid-template-columns: repeat(6, 1fr);
+const GridContainer = styled.div`
+  display: grid;
+  border: 10px solid black;
+  grid-template-rows: auto;
+  grid-gap: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 
 class Showcase extends Component {
   render() {
     return (
-      <ShowcaseGutter>
+      <GridContainer>
         <MoviesInTheaters />
-      </ShowcaseGutter>
+      </GridContainer>
     );
   }
 }

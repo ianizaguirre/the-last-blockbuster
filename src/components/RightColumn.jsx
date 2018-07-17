@@ -30,7 +30,11 @@ const InfoWrap = styled.div`
 //   margin: 0 auto;
 // `;
 
-const ShowCaseWrapper = styled.div`
+// const ShowCaseWrapper = styled.div`
+//   margin: 0 auto;
+// `;
+const ShowcaseGutter = styled.div`
+  width: 95%;
   margin: 0 auto;
 `;
 
@@ -53,10 +57,9 @@ class RightColumn extends Component {
             <InfoWrap>
               <RightInfoBar />
             </InfoWrap>
-
-            <ShowCaseWrapper>
+            <ShowcaseGutter>
               <Showcase />
-            </ShowCaseWrapper>
+            </ShowcaseGutter>
           </FlexContainer>
         </Wrapper>
         <Footer />

@@ -12,17 +12,22 @@ import styled from 'styled-components';
 // );
 //  const data = this.props.nowplaying[1].title;
 
-const Wrapper = styled.div`
-  background: red;
-`;
 // margin: 0 auto;
 // width: 200px;
 // height: auto;
 // padding: 5px;
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+// const FlexContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  background: rgba(184, 182, 182, 0.18);
 `;
+
 const Image = styled.img`
   margin: 0 auto;
   width: 100%;
@@ -31,18 +36,17 @@ const Title = styled.h4`
   font-size: ${props => props.theme.h4Size};
   font-weight: ${props => props.theme.h4Weight};
   font-family: ${props => props.theme.secondaryFontFamily};
+  letter-spacing: 0.5px;
 `;
 
 class MovieCard extends Component {
   render() {
     const { title, poster_path } = this.props;
     return (
-      <Wrapper>
-        <FlexContainer>
-          <Image alt="logo" src={`${Services.imageUrl}w500${poster_path}`} />
-          <Title>{title}</Title>
-        </FlexContainer>
-      </Wrapper>
+      <GridContainer>
+        <Image alt="logo" src={`${Services.imageUrl}w500${poster_path}`} />
+        <Title>{title}</Title>
+      </GridContainer>
     );
   }
 }

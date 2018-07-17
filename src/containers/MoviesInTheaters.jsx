@@ -21,17 +21,6 @@ import Services from './../services';
 //   background: green;
 // `;
 
-// grid-column-gap: 30px;
-// grid-row-gap: 25px;
-
-// grid-template-columns: 200px 200px 200px 200px 200px 200px;
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-rows: auto;
-  grid-gap: 36px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-`;
-
 class MoviesNowPlaying extends Component {
   state = {
     inTheaters: []
@@ -49,11 +38,7 @@ class MoviesNowPlaying extends Component {
     // console.table(this.state.nowplaying);
     // console.log(this.state.nowplaying[1].title);
     // <MovieCard nowplaying={this.state.nowplaying} />;
-    return (
-      <Fragment>
-        <GridContainer>{this.state.inTheaters.map(movie => <MovieCard key={movie.id} {...movie} />)}</GridContainer>
-      </Fragment>
-    );
+    return <Fragment>{this.state.inTheaters.map(movie => <MovieCard key={movie.id} {...movie} />)}</Fragment>;
   }
 }
 

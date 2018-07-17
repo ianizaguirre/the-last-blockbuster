@@ -7,25 +7,18 @@ import Sidebar from './Sidebar';
 import LeftHeader from './LeftHeader';
 import LeftInfoBar from './LeftInfoBar';
 
-const Wrapper = styled.div`
-  background: inherit;
-`;
-
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
 `;
 
-// const Gutter = styled.div`
-//   width: 50%;
-//   margin: 0 auto;
-// `;
-
+/* margin-bottom: 15 .... + 15 from li padding = 30px */
 const InfoWrap = styled.div`
   background: #18191e;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 `;
+
 const HeaderWrap = styled.div`
   background: #fff;
   min-height: ${props => props.theme.headerHeight};
@@ -36,19 +29,17 @@ const HeaderWrap = styled.div`
 class LeftColumn extends Component {
   render() {
     return (
-      <Wrapper>
-        <FlexContainer>
-          <HeaderWrap>
-            <LeftHeader />
-          </HeaderWrap>
+      <FlexContainer>
+        <HeaderWrap>
+          <LeftHeader />
+        </HeaderWrap>
 
-          <InfoWrap>
-            <LeftInfoBar />
-          </InfoWrap>
+        <InfoWrap>
+          <LeftInfoBar />
+        </InfoWrap>
 
-          <Sidebar />
-        </FlexContainer>
-      </Wrapper>
+        <Sidebar />
+      </FlexContainer>
     );
   }
 }
