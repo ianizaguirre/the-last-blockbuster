@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from './theme';
 import Router from './Router';
@@ -25,7 +26,9 @@ injectGlobal`
 const renderApp = () => {
   render(
     <ThemeProvider theme={theme}>
-      <Router />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </ThemeProvider>,
     document.getElementById('app')
   );
