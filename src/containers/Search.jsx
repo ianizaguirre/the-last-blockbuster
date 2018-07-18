@@ -37,3 +37,38 @@ class Search extends Component {
 }
 
 export default Search;
+/*=======================================
+
+
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+
+import ShowCard from './../components/ShowCard';
+
+const SearchBar = styled.input`
+  min-width: 18rem;
+  background-color: #f5f4f8;
+  border-radius: 3px;
+  border: 1px solid #c8ccd0;
+  line-height: 1.4;
+  padding: 8px 16px;
+`;
+
+const Search = () => (
+<Fragment>
+      <SearchBar
+        onChange={this.handleSearchTermChange}
+        value={props.searchTerm}
+        type="text"
+        placeholder="Search"
+      />
+</Fragment>
+    );
+
+
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm
+});
+
+export default connect(mapStateToProps)(Search);
+===================================================== */
