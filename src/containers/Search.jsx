@@ -1,49 +1,10 @@
 /* eslint-disable */
 
-import React, { Component } from 'react';
-import styled from 'styled-components';
-
-import ShowCard from './../components/ShowCard';
-
-const SearchBar = styled.input`
-  min-width: 18rem;
-  background-color: #f5f4f8;
-  border-radius: 3px;
-  border: 1px solid #c8ccd0;
-  line-height: 1.4;
-  padding: 8px 16px;
-`;
-
-class Search extends Component {
-  state = {
-    searchTerm: ''
-  };
-  props: {
-    shows: Array<Show>
-  };
-  handleSearchTermChange = event => {
-    this.setState({ searchTerm: event.target.value });
-  };
-  render() {
-    return (
-      <SearchBar
-        onChange={this.handleSearchTermChange}
-        value={this.state.searchTerm}
-        type="text"
-        placeholder="Search"
-      />
-    );
-  }
-}
-
-export default Search;
-/*=======================================
-
-
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import ShowCard from './../components/ShowCard';
+import { setSearchTerm } from './../redux/actionCreators/search.js';
 
 const SearchBar = styled.input`
   min-width: 18rem;
@@ -54,21 +15,20 @@ const SearchBar = styled.input`
   padding: 8px 16px;
 `;
 
-const Search = () => (
-<Fragment>
-      <SearchBar
-        onChange={this.handleSearchTermChange}
-        value={props.searchTerm}
-        type="text"
-        placeholder="Search"
-      />
-</Fragment>
-    );
+const Search = props => {
+  return (
+    <Fragment>
+      <SearchBar onChange={props.handleSearchTermChange} value={props.searchTerm} type="text" placeholder="Search" />
+    </Fragment>
+  );
+};
 
+const mapStateToProps = state => ({ searchTerm: state.searchTerm });
 
-const mapStateToProps = state => ({
-  searchTerm: state.searchTerm
+const mapDispatchToProps = dispatch => ({
+  handleSearchTermChange(event) {
+    dispatch(setSearchTerm(event.target.value));
+  }
 });
 
-export default connect(mapStateToProps)(Search);
-===================================================== */
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
