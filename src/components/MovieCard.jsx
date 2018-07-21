@@ -3,36 +3,53 @@
 import React, { Component } from 'react';
 import Services from '../services';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-// const MovieCard = props => (
-//   <div>
-//     <h1>TITLE</h1>
-//     <p>{this.props.nowplaying}</p>
-//   </div>
-// );
-//  const data = this.props.nowplaying[1].title;
-
-// margin: 0 auto;
-// width: 200px;
-// height: auto;
-// padding: 5px;
-// const FlexContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
+const WrapperLink = styled(Link)`
+  color: #575759;
+  text-decoration: none;
+`;
 
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: start;
-  background: rgba(184, 182, 182, 0.18);
+  /* background: rgba(184, 182, 182, 0.18); */
   max-width: 218px;
 `;
 
+const FogWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+
+  ${GridContainer}:hover & {
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5));
+      // transition: transform 0.2s ease-out;
+      // transform: rotateZ(60deg) translate(-5em, 7.5em);
+    }
+  }
+`;
+
+// Translation of reffering to another Styled-Component -->
+// When I hover over ${GridContainer} I want this (opacity: 0.5) to happen to Image
 const Image = styled.img`
+  display: block;
   margin: 0 auto;
   width: 100%;
+
+
+  // ${GridContainer}:hover & {
+  //   opacity: 0.5;
+  // }
 `;
+
 const Title = styled.h4`
   font-size: ${props => props.theme.h4Size};
   font-weight: ${props => props.theme.semiBold};
@@ -45,8 +62,13 @@ class MovieCard extends Component {
     const { title, poster_path } = this.props;
     return (
       <GridContainer>
-        <Image alt="logo" src={`${Services.imageUrl}w500${poster_path}`} />
-        <Title>{title}</Title>
+        <WrapperLink to={`/details/`}>
+          <FogWrapper>
+            <Image alt="logo" src={`${Services.imageUrl}w500${poster_path}`} />
+          </FogWrapper>
+
+          <Title>{title}</Title>
+        </WrapperLink>
       </GridContainer>
     );
   }
