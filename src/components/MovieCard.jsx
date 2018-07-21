@@ -26,6 +26,7 @@ const GridContainer = styled.div`
   grid-template-columns: 1fr;
   justify-items: start;
   background: rgba(184, 182, 182, 0.18);
+  max-width: 218px;
 `;
 
 const Image = styled.img`

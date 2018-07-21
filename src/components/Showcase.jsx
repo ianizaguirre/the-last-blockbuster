@@ -15,6 +15,8 @@ const GridContainer = styled.div`
   grid-gap: 36px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
+  justify-items: center;
+
   margin-top: 30px;
   margin-bottom: 30px;
 `;
