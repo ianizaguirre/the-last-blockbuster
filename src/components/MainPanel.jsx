@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 import RightHeader from './RightHeader';
 import RightInfoBar from './../containers/RightInfoBar';
-import Showcase from './Showcase';
 
 /* WRAPPER Keeps footer on bottom but why? */
 const Wrapper = styled.div`

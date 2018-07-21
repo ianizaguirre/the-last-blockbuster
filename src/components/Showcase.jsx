@@ -1,34 +1,45 @@
 /* eslint-disable */
 import React, { Component, Fragment } from 'react';
-
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Example from './Example';
-import MoviesInTheaters from './../containers/MoviesInTheaters';
+import MainPanel from './MainPanel';
 
-const routes = [
-  {
-    path: '/',
-    exact: true,
-    sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>
-  },
-  {
-    path: '/moo',
-    main: MoviesInTheaters
-  },
-  {
-    path: '/example',
-    main: () => (
-      <div>
-        <Example />
-      </div>
-    )
-  }
-];
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 0.6fr 2fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'sidePanel content-main-1 content-main-2';
+`;
 
+const SidePanelWrapper = styled.div`
+  background: ${props => props.theme.primaryYellow};
+  grid-column: sidePanel;
+`;
+
+const FlexContainer = styled.div`
+  grid-column-start: content-main-1;
+  grid-column-end: content-main-2;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const ShowcaseWrapper = styled.div`
+  grid-column-start: content-main-1;
+  grid-column-end: content-main-2;
+
+  overflow: auto;
+  height: 100vh;
+`;
+
+const Gutter = styled.div`
+  width: 95%;
+  margin: 0 auto;
+`;
+
+// =========
 const GridContainer = styled.div`
   display: grid;
   border: 10px solid black;
@@ -42,69 +53,20 @@ const GridContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-// ============
-const Ul = styled.ul`
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-`;
-
-// background: red;
-const Li = styled.li`
-  display: block;
-  font-weight: ${props => props.theme.semiBold};
-  font-family: ${props => props.theme.secondaryFontFamily};
-  padding: 15px 0;
-  cursor: pointer;
-
-  &:hover {
-    background: #f1b318;
-    color: #f6f6f6;
-  }
-`;
-
-const Wrap = styled(Link)`
-  text-decoration: none;
-  display: inherit;
-  max-width: 50%;
-  margin: 0 auto;
-`;
-
-const Menu = () => (
-  <Ul>
-    <Li>
-      <Wrap to={`/moo`}>In Theaters</Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/example`}>Example</Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/example`}>Example2</Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/`}>Popular</Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/`}>New Releases</Wrap>
-    </Li>
-  </Ul>
-);
-
-const Showcase = () => (
-  <div>
-    <Router>
-      <Switch>
-        <GridContainer>
-          {routes.map((route, index) => (
-            <Route key={index} path={route.path} exact={route.exact} component={route.main} />
-          ))}
-
-          <Menu />
-        </GridContainer>
-      </Switch>
-    </Router>
-  </div>
+const Showcase = props => (
+  <Router>
+    <GridWrapper>
+      <SidePanelWrapper>{props.sidePanel}</SidePanelWrapper>
+      <FlexContainer>
+        <MainPanel />
+        <ShowcaseWrapper>
+          <Gutter>
+            <GridContainer>{props.shows}</GridContainer>
+          </Gutter>
+        </ShowcaseWrapper>
+      </FlexContainer>
+    </GridWrapper>
+  </Router>
 );
 
 export default Showcase;
