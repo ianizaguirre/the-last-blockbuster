@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { Component, Fragment } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import Services from './../services';
@@ -19,8 +19,18 @@ class MoviesNowPlaying extends Component {
   }
 
   render() {
-    return <Fragment>{this.state.inTheaters.map(movie => <MovieCard key={movie.id} {...movie} />)}</Fragment>;
+    return (
+      <Fragment>
+        {this.state.inTheaters
+          .filter(movie => `${movie.title}`.toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0)
+          .map(movie => <MovieCard key={movie.id} {...movie} />)}
+      </Fragment>
+    );
   }
 }
 
-export default MoviesNowPlaying;
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm
+});
+
+export default connect(mapStateToProps)(MoviesNowPlaying);
