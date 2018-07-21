@@ -4,7 +4,7 @@ import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 
 import RightHeader from './RightHeader';
-import RightInfoBar from './RightInfoBar';
+import RightInfoBar from './../containers/RightInfoBar';
 import Showcase from './Showcase';
 
 /* WRAPPER Keeps footer on bottom but why? */

@@ -1,5 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components';
+// import { Link } from 'react-router-dom';
 
 const Ul = styled.ul`
   padding: 0;
@@ -22,23 +24,30 @@ const Li = styled.li`
   }
 `;
 
-const Wrap = styled.div`
+const Wrap = styled(Link)`
+  text-decoration: none;
   display: inherit;
   max-width: 50%;
   margin: 0 auto;
 `;
+
 const Sidebar = () => (
-  <Ul>
-    <Li>
-      <Wrap>In Theaters</Wrap>
-    </Li>
-    <Li>
-      <Wrap>Popular</Wrap>
-    </Li>
-    <Li>
-      <Wrap>New Releases</Wrap>
-    </Li>
-  </Ul>
+  <Router>
+    <Ul>
+      <Li>
+        <Wrap to={`/moo`}>In Theaters</Wrap>
+      </Li>
+      <Li>
+        <Wrap to={`/example`}>Example</Wrap>
+      </Li>
+      <Li>
+        <Wrap to={`/`}>Popular</Wrap>
+      </Li>
+      <Li>
+        <Wrap to={`/`}>New Releases</Wrap>
+      </Li>
+    </Ul>
+  </Router>
 );
 
 export default Sidebar;

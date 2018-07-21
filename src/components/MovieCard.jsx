@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const WrapperLink = styled(Link)`
-  color: #575759;
+  color: ${props => props.theme.greyText1};
   text-decoration: none;
 `;
 
