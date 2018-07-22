@@ -22,22 +22,22 @@ const routes = [
   {
     path: '/',
     exact: true,
-    sidebar: SidePanel,
-    main: () => <h2>Home</h2>
+    main: () => <h2>Home</h2>,
+    sidebar: SidePanel
   },
   {
     path: '/moo',
-    sidebar: SidePanel,
-    main: MoviesInTheaters
+    main: MoviesInTheaters,
+    sidebar: SidePanel
   },
   {
     path: '/example',
-    sidebar: SidePanel,
     main: () => (
       <div>
         <Example />
       </div>
-    )
+    ),
+    sidebar: SidePanel
   }
 ];
 

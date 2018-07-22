@@ -6,17 +6,23 @@ import { Link } from 'react-router-dom';
 const Ul = styled.ul`
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+
+  display: grid;
 `;
 
+// grid-template-columns: 1fr minmax(120px,1fr) 1fr; */
 // background: red;
 const Li = styled.li`
-  display: block;
   font-weight: ${props => props.theme.semiBold};
   font-family: ${props => props.theme.secondaryFontFamily};
+`;
+
+const Wrap = styled(Link)`
+  text-decoration: none;
   padding: 15px 0;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
   &:hover {
     background: #f1b318;
@@ -24,29 +30,37 @@ const Li = styled.li`
   }
 `;
 
-const Wrap = styled(Link)`
+const Title = styled.div`
   text-decoration: none;
-  display: inherit;
-  max-width: 50%;
-  margin: 0 auto;
+  grid-column: 2 / -1;
 `;
 
 const Sidebar = () => (
   <Ul>
     <Li>
-      <Wrap to={`/`}>Home</Wrap>
+      <Wrap to={`/`}>
+        <Title>Home</Title>
+      </Wrap>
     </Li>
     <Li>
-      <Wrap to={`/moo`}>In Theaters</Wrap>
+      <Wrap to={`/moo`}>
+        <Title>In Theaters</Title>
+      </Wrap>
     </Li>
     <Li>
-      <Wrap to={`/example`}>Example</Wrap>
+      <Wrap to={`/example`}>
+        <Title>Example</Title>
+      </Wrap>
     </Li>
     <Li>
-      <Wrap to={`/`}>Popular</Wrap>
+      <Wrap to={`/`}>
+        <Title>Popular</Title>
+      </Wrap>
     </Li>
     <Li>
-      <Wrap to={`/`}>New Releases</Wrap>
+      <Wrap to={`/`}>
+        <Title>New Releases</Title>
+      </Wrap>
     </Li>
   </Ul>
 );

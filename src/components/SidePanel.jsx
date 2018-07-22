@@ -39,7 +39,7 @@ class SidePanel extends Component {
           <LeftInfoBar />
         </InfoWrap>
 
-        <Sidebar sidebarMenu={this.props.sidebarMenu} />
+        <Sidebar />
       </FlexContainer>
     );
   }
