@@ -6,7 +6,8 @@ import Breadcrumb from './../containers/Breadcrumb';
 const Wrapper = styled.div`
   height: 48px;
   margin: 0 auto;
-  max-width: 50%;
+  // max-width: 50%;
+  width: 95%
   display: flex;
   align-items: center;
 `;

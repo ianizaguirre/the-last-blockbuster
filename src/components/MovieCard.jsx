@@ -59,10 +59,10 @@ const Title = styled.h4`
 
 class MovieCard extends Component {
   render() {
-    const { title, poster_path } = this.props;
+    const { title, poster_path, id } = this.props;
     return (
       <GridContainer>
-        <WrapperLink to={`/details/`}>
+        <WrapperLink to={`/details/${id}`}>
           <FogWrapper>
             <Image alt="logo" src={`${Services.imageUrl}w500${poster_path}`} />
           </FogWrapper>

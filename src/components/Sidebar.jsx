@@ -67,7 +67,7 @@ const Sidebar = props => {
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/`}>
-            <Title>New Releases</Title>
+            <Title>Settings</Title>
           </Wrap>
         </Li>
       </Ul>

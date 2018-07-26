@@ -12,7 +12,7 @@ import Example from './components/Example';
 import MoviesInTheaters from './containers/MoviesInTheaters';
 import Showcase from './components/Showcase';
 
-// import Details from './components/Details';
+import Details from './components/Details';
 
 // <Route exact path="/" component={App} />;
 // <Route exact path="/" component={props => <App routes={routes} {...props} />} />;
@@ -37,6 +37,11 @@ const routes = [
         <Example />
       </div>
     ),
+    sidebar: SidePanel
+  },
+  {
+    path: '/details/:id',
+    main: Details,
     sidebar: SidePanel
   }
 ];
