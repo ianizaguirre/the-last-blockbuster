@@ -1,7 +1,11 @@
-import React from 'react';
+/* eslint-disable */
+import React, { Fragment } from 'react';
 // import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+import { getCurrentMenuTerm } from './../redux/actionCreators/menu.js';
 
 const Ul = styled.ul`
   padding: 0;
@@ -35,34 +39,51 @@ const Title = styled.div`
   grid-column: 2 / -1;
 `;
 
-const Sidebar = () => (
-  <Ul>
-    <Li>
-      <Wrap to={`/`}>
-        <Title>Home</Title>
-      </Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/moo`}>
-        <Title>In Theaters</Title>
-      </Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/example`}>
-        <Title>Example</Title>
-      </Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/`}>
-        <Title>Popular</Title>
-      </Wrap>
-    </Li>
-    <Li>
-      <Wrap to={`/`}>
-        <Title>New Releases</Title>
-      </Wrap>
-    </Li>
-  </Ul>
-);
+// <div onClick={props.handleCurrentMenuTerm}>YOOOOO</div>
 
-export default Sidebar;
+const Sidebar = props => {
+  return (
+    <Fragment>
+      <Ul>
+        <Li onClick={props.handleCurrentMenuTerm}>
+          <Wrap to={`/`}>
+            <Title>Home</Title>
+          </Wrap>
+        </Li>
+        <Li onClick={props.handleCurrentMenuTerm}>
+          <Wrap to={`/in-theaters`}>
+            <Title>In Theaters</Title>
+          </Wrap>
+        </Li>
+        <Li onClick={props.handleCurrentMenuTerm}>
+          <Wrap to={`/example`}>
+            <Title>Example</Title>
+          </Wrap>
+        </Li>
+        <Li onClick={props.handleCurrentMenuTerm}>
+          <Wrap to={`/`}>
+            <Title>Popular</Title>
+          </Wrap>
+        </Li>
+        <Li onClick={props.handleCurrentMenuTerm}>
+          <Wrap to={`/`}>
+            <Title>New Releases</Title>
+          </Wrap>
+        </Li>
+      </Ul>
+    </Fragment>
+  );
+};
+
+const mapStateToProps = state => ({ currentMenuTerm: state.currentMenuTerm });
+
+const mapDispatchToProps = dispatch => ({
+  handleCurrentMenuTerm(event) {
+    event.preventDefault();
+    dispatch(getCurrentMenuTerm(event.target.textContent));
+  }
+});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sidebar);

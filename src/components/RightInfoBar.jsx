@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Breadcrumb from './../containers/Breadcrumb';
+
 const Wrapper = styled.div`
   height: 48px;
   margin: 0 auto;
@@ -18,7 +20,9 @@ const Heading = styled.h3`
 
 const RightInfoBar = () => (
   <Wrapper>
-    <Heading> right info bar </Heading>
+    <Heading>
+      <Breadcrumb />
+    </Heading>
   </Wrapper>
 );
 

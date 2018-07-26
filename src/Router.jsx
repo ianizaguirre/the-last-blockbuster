@@ -26,7 +26,7 @@ const routes = [
     sidebar: SidePanel
   },
   {
-    path: '/moo',
+    path: '/in-theaters',
     main: MoviesInTheaters,
     sidebar: SidePanel
   },
