@@ -1,13 +1,25 @@
 // @flow
-import { SET_SEARCH_TERM } from './../actions';
+import { SET_SEARCH_TERM, GET_MOVIE_DETAILS } from './../actions';
 
-const searchTerm = (state = '', action: Action) => {
+// const initialState = {
+//   movieDetails: {}
+// };
+
+export const searchTerm = (state = '', action: Action) => {
   if (action.type === SET_SEARCH_TERM) {
     return action.payload;
   }
   return state;
 };
 
-// const rootReducer = combineReducers({ searchTerm });
-
-export default searchTerm;
+export const movieDetailsFullView = (state = {}, action) => {
+  switch (action.type) {
+    case GET_MOVIE_DETAILS:
+      return {
+        ...state,
+        movieDetails: action.payload
+      };
+    default:
+      return state;
+  }
+};

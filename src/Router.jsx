@@ -40,14 +40,7 @@ const routes = [
     ),
     sidebar: SidePanel
   },
-  // {
-  //   path: '/details/:id',
-  //   main: (props: {match: Match}) => {
-  //     const selectedShow = preload.shows.find(show => props.match.params.id === show.id);
-  //     return <Details show={selectedShow} {...props} />;
-  //   },
-  //   sidebar: SidePanel
-  // }
+
   {
     path: '/details/:id',
     main: (props: { match: Match }) => {

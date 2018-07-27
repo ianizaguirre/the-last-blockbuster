@@ -14,7 +14,7 @@ import Services from './../services';
 
 class Details extends Component {
   state = {
-    movieDetails: []
+    movieDetails: {}
   };
 
   componentDidMount() {

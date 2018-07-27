@@ -1,4 +1,5 @@
-import { SET_SEARCH_TERM, ADD_API_DATA } from './../actions';
+import { SET_SEARCH_TERM, ADD_API_DATA, GET_MOVIE_DETAILS } from './../actions';
+import Services from './../../services';
 
 export function setSearchTerm(searchTerm) {
   return { type: SET_SEARCH_TERM, payload: searchTerm };
@@ -6,4 +7,15 @@ export function setSearchTerm(searchTerm) {
 
 export function addAPIData(apiData) {
   return { type: ADD_API_DATA, payload: apiData };
+}
+
+export function getMovieDetails(id) {
+  return dispatch => {
+    Services.getMovieDetails(id).then(response => {
+      dispatch({
+        type: GET_MOVIE_DETAILS,
+        payload: response
+      });
+    });
+  };
 }

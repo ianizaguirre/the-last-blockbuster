@@ -53,20 +53,27 @@ const GridContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-const Showcase = props => (
-  <Router>
-    <GridWrapper>
-      <SidePanelWrapper>{props.sidePanel}</SidePanelWrapper>
-      <FlexContainer>
-        <MainPanel />
-        <ShowcaseWrapper>
-          <Gutter>
-            <GridContainer>{props.mainContent}</GridContainer>
-          </Gutter>
-        </ShowcaseWrapper>
-      </FlexContainer>
-    </GridWrapper>
-  </Router>
-);
-
+// const Showcase = props => (
+class Showcase extends React.Component {
+  render() {
+    console.log('=========BBBBBBB---->');
+    console.log(this.props.history);
+    return (
+      <Router>
+        <GridWrapper>
+          <SidePanelWrapper>{this.props.sidePanel}</SidePanelWrapper>
+          <FlexContainer>
+            <MainPanel />
+            <ShowcaseWrapper>
+              <Gutter>
+                <GridContainer>{this.props.mainContent}</GridContainer>
+              </Gutter>
+            </ShowcaseWrapper>
+          </FlexContainer>
+        </GridWrapper>
+      </Router>
+      // );
+    );
+  }
+}
 export default Showcase;
