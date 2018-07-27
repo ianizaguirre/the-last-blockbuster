@@ -61,7 +61,7 @@ const Showcase = props => (
         <MainPanel />
         <ShowcaseWrapper>
           <Gutter>
-            <GridContainer>{props.shows}</GridContainer>
+            <GridContainer>{props.mainContent}</GridContainer>
           </Gutter>
         </ShowcaseWrapper>
       </FlexContainer>

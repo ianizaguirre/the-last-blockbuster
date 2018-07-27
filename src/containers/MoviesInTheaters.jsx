@@ -15,6 +15,8 @@ class MoviesNowPlaying extends Component {
   componentDidMount() {
     Services.getNowPlaying().then(response => {
       this.setState({ inTheaters: response.results });
+      // console.log('======RESULTS======>');
+      // console.log(response);
     });
   }
 
