@@ -11,7 +11,7 @@ class Details extends Component {
   }
 
   render() {
-    const { title, tagline, overview, release_date } = this.props.movie;
+    const { title, tagline, overview, release_date } = this.props.movieFullView;
     return (
       <Fragment>
         <p>Title</p>
@@ -31,7 +31,7 @@ class Details extends Component {
 }
 
 const mapStateToProps = state => ({
-  movie: state.movie.details
+  movieFullView: state.movieFullView.details
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

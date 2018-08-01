@@ -8,11 +8,12 @@ export const searchTerm = (state = '', action: Action) => {
   return state;
 };
 
+// ==== movieFullView Object Root - nested values ===
 const initialState = {
   details: {}
 };
 
-export const movie = (state = initialState, action) => {
+export const movieFullView = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIE_DETAILS:
       return {
