@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
-import Services from '../services';
+import APIConnect from './../services/api-connect';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -64,7 +64,7 @@ class MovieCard extends Component {
       <GridContainer>
         <WrapperLink to={`/details/${id}`}>
           <FogWrapper>
-            <Image alt="logo" src={`${Services.imageUrl}w500${poster_path}`} />
+            <Image alt="logo" src={`${APIConnect.imageUrl}w500${poster_path}`} />
           </FogWrapper>
 
           <Title>{title}</Title>

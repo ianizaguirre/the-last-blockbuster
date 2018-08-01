@@ -1,5 +1,5 @@
 import { SET_SEARCH_TERM, ADD_API_DATA, GET_MOVIE_DETAILS } from './../actions';
-import Services from './../../services';
+import APIConnect from './../../services/api-connect';
 
 export function setSearchTerm(searchTerm) {
   return { type: SET_SEARCH_TERM, payload: searchTerm };
@@ -11,7 +11,7 @@ export function addAPIData(apiData) {
 
 export function getMovieDetails(id) {
   return dispatch => {
-    Services.getMovieDetails(id).then(response => {
+    APIConnect.getMovieDetails(id).then(response => {
       dispatch({
         type: GET_MOVIE_DETAILS,
         payload: response

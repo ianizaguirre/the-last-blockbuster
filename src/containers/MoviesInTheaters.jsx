@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import Services from './../services';
+import APIConnect from './../services/api-connect';
 
 import MovieCard from './../components/MovieCard';
 
@@ -13,7 +13,7 @@ class MoviesNowPlaying extends Component {
   };
 
   componentDidMount() {
-    Services.getNowPlaying().then(response => {
+    APIConnect.getNowPlaying().then(response => {
       this.setState({ inTheaters: response.results });
       // console.log('======RESULTS======>');
       // console.log(response);
