@@ -1,4 +1,4 @@
-import { SET_SEARCH_TERM, ADD_API_DATA, GET_MOVIE_DETAILS } from './../actions';
+import { SET_SEARCH_TERM, ADD_API_DATA, GET_MOVIES_IN_THEATERS, GET_MOVIE_DETAILS } from './../actions';
 import APIConnect from './../../services/api-connect';
 
 export function setSearchTerm(searchTerm) {
@@ -7,6 +7,17 @@ export function setSearchTerm(searchTerm) {
 
 export function addAPIData(apiData) {
   return { type: ADD_API_DATA, payload: apiData };
+}
+
+export function getMoviesInTheaters() {
+  return dispatch => {
+    APIConnect.getNowPlaying().then(response => {
+      dispatch({
+        type: GET_MOVIES_IN_THEATERS,
+        payload: response.results
+      });
+    });
+  };
 }
 
 export function getMovieDetails(id) {

@@ -22,6 +22,7 @@ export default {
   //   return this.apiCall('movie/upcoming');
   // },
 
+  // === Movies Now Playing IN Theaters ===
   getNowPlaying() {
     return this.apiCall('movie/now_playing');
   },
