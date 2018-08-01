@@ -27,6 +27,7 @@ export const movies = (state = initialMoviesState, action) => {
 
 // ==== movieFullView Object Root - nested values ===
 const initialState = {
+  detailsPageIsOpen: false,
   details: {}
 };
 
@@ -35,6 +36,7 @@ export const movieFullView = (state = initialState, action) => {
     case GET_MOVIE_DETAILS:
       return {
         ...state,
+        detailsPageIsOpen: !state.detailsPageIsOpen,
         details: action.payload
       };
     default:

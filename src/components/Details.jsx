@@ -10,6 +10,11 @@ class Details extends Component {
     this.props.getAPIData();
   }
 
+  componentWillUnmount() {
+    // Toggles pageIsOpen State
+    this.props.getAPIData();
+  }
+
   render() {
     const { title, tagline, overview, release_date } = this.props.movieFullView;
     return (
@@ -31,6 +36,7 @@ class Details extends Component {
 }
 
 const mapStateToProps = state => ({
+  pageIsOpen: state.movieFullView.detailsPageIsOpen,
   movieFullView: state.movieFullView.details
 });
 
