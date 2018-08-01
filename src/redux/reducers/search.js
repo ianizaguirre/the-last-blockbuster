@@ -1,10 +1,6 @@
 // @flow
 import { SET_SEARCH_TERM, GET_MOVIE_DETAILS } from './../actions';
 
-// const initialState = {
-//   movieDetails: {}
-// };
-
 export const searchTerm = (state = '', action: Action) => {
   if (action.type === SET_SEARCH_TERM) {
     return action.payload;
@@ -12,12 +8,16 @@ export const searchTerm = (state = '', action: Action) => {
   return state;
 };
 
-export const movieDetailsFullView = (state = {}, action) => {
+const initialState = {
+  details: {}
+};
+
+export const movie = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIE_DETAILS:
       return {
         ...state,
-        movieDetails: action.payload
+        details: action.payload
       };
     default:
       return state;

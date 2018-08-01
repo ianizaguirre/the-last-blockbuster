@@ -2,14 +2,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 import thunk from 'redux-thunk';
 
-import { searchTerm, movieDetailsFullView } from './reducers/search';
 import currentMenuTerm from './reducers/menu';
+import { searchTerm, movie } from './reducers/search';
 
 // ==================
 const rootReducer = combineReducers({
   searchTerm,
   currentMenuTerm,
-  movieDetailsFullView
+  movie
 });
 // ==================
 
