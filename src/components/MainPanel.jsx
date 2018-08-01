@@ -1,42 +1,37 @@
 /* eslint-disable */
 import React, { Fragment, Component } from 'react';
+import { connect } from 'react-redux';
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import RightHeader from './RightHeader';
 import RightInfoBar from './RightInfoBar';
-// import RightInfoBar from './../containers/RightInfoBar';
 
-/* WRAPPER Keeps footer on bottom but why? */
-const Wrapper = styled.div`
-  background: inherit;
-`;
-
-const HeaderWrap = styled.div`
-  background: #fff;
-  min-height: ${props => props.theme.headerHeight};
-  display: flex;
-  align-items: center;
-`;
-
-const InfoWrap = styled.div`
-  background: #24252a;
-  padding: 0.5em;
-`;
+// const Wrapper = styled.div`
+//   background: inherit;
+// `;
 
 class MainPanel extends Component {
   render() {
+    let rightInfoBarComponent;
+    if (this.props.onDetailsPage === false) {
+      rightInfoBarComponent = <RightInfoBar />;
+    } else {
+      rightInfoBarComponent = <p>MainPanel.jsx --- Card Poster HERO IMG placeholder</p>;
+    }
+
     return (
       <Fragment>
-        <HeaderWrap>
-          <RightHeader />
-        </HeaderWrap>
-        <InfoWrap>
-          <RightInfoBar />
-        </InfoWrap>
+        <RightHeader />
+
+        {rightInfoBarComponent}
       </Fragment>
     );
   }
 }
 
-export default MainPanel;
+const mapStateToProps = state => ({
+  onDetailsPage: state.movieFullView.detailsPageIsOpen
+});
+
+export default connect(mapStateToProps)(MainPanel);

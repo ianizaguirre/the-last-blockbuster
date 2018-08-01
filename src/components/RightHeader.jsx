@@ -3,6 +3,13 @@ import styled from 'styled-components';
 
 import Search from './../containers/Search';
 
+const HeaderWrap = styled.div`
+  background: #fff;
+  min-height: ${props => props.theme.headerHeight};
+  display: flex;
+  align-items: center;
+`;
+
 const SearchGutter = styled.div`
   width: 95%;
   margin: 0 auto;
@@ -15,9 +22,11 @@ const SearchGutter = styled.div`
 // `;
 
 const RightHeader = () => (
-  <SearchGutter>
-    <Search />
-  </SearchGutter>
+  <HeaderWrap>
+    <SearchGutter>
+      <Search />
+    </SearchGutter>
+  </HeaderWrap>
 );
 
 export default RightHeader;

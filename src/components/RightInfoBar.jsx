@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 import Breadcrumb from './../containers/Breadcrumb';
 
+const InfoWrap = styled.div`
+  background: #24252a;
+  padding: 0.5em;
+`;
+
 const Wrapper = styled.div`
   height: 48px;
   margin: 0 auto;
@@ -20,11 +25,13 @@ const Heading = styled.h3`
 `;
 
 const RightInfoBar = () => (
-  <Wrapper>
-    <Heading>
-      <Breadcrumb />
-    </Heading>
-  </Wrapper>
+  <InfoWrap>
+    <Wrapper>
+      <Heading>
+        <Breadcrumb />
+      </Heading>
+    </Wrapper>
+  </InfoWrap>
 );
 
 export default RightInfoBar;
