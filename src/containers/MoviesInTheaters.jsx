@@ -4,41 +4,9 @@ import { connect } from 'react-redux';
 import { getMoviesInTheaters } from './../redux/actionCreators/search';
 import styled from 'styled-components';
 
-// import APIConnect from './../services/api-connect';
-
 import MovieCard from './../components/MovieCard';
 
-// class MoviesNowPlaying extends Component {
-//   state = {
-//     inTheaters: []
-//   };
-
-//   componentDidMount() {
-//     APIConnect.getNowPlaying().then(response => {
-//       this.setState({ inTheaters: response.results });
-//       // console.log('======RESULTS======>');
-//       // console.log(response);
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <Fragment>
-//         {this.state.inTheaters
-//           .filter(movie => `${movie.title}`.toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0)
-//           .map(movie => <MovieCard key={movie.id} {...movie} />)}
-//       </Fragment>
-//     );
-//   }
-// }
-
-// const mapStateToProps = state => ({
-//   searchTerm: state.searchTerm
-// });
-
-// export default connect(mapStateToProps)(MoviesNowPlaying);
-
-class MoviesNowPlaying extends Component {
+class MoviesInTheaters extends Component {
   componentDidMount() {
     this.props.getAPIData();
   }
@@ -70,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MoviesNowPlaying);
+)(MoviesInTheaters);
