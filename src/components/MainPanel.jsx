@@ -2,7 +2,9 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
+import APIConnect from './../services/api-connect';
 
 import RightHeader from './RightHeader';
 import RightInfoBar from './RightInfoBar';
@@ -11,13 +13,19 @@ import RightInfoBar from './RightInfoBar';
 //   background: inherit;
 // `;
 
+const Image = styled.img`
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+`;
+
 class MainPanel extends Component {
   render() {
     let rightInfoBarComponent;
     if (this.props.onDetailsPage === false) {
       rightInfoBarComponent = <RightInfoBar />;
     } else {
-      rightInfoBarComponent = <p>MainPanel.jsx --- Card Poster HERO IMG placeholder</p>;
+      rightInfoBarComponent = <Image alt="logo" src={`${APIConnect.imageUrl}w500${this.props.heroImage}`} />;
     }
 
     return (
@@ -31,7 +39,8 @@ class MainPanel extends Component {
 }
 
 const mapStateToProps = state => ({
-  onDetailsPage: state.movieFullView.detailsPageIsOpen
+  onDetailsPage: state.movieFullView.detailsPageIsOpen,
+  heroImage: state.movieFullView.details.backdrop_path
 });
 
 export default connect(mapStateToProps)(MainPanel);
