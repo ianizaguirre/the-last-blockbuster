@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 
 import thunk from 'redux-thunk';
 
@@ -7,19 +7,19 @@ import { searchTerm, movies, movieFullView } from './reducers/search';
 
 // ==================
 const rootReducer = combineReducers({
-  searchTerm,
   currentMenuTerm,
+  searchTerm,
   movies,
   movieFullView
 });
 // ==================
-
-/* eslint-disable no-underscore-dangle */
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(thunk)
+const enhancers = compose(
+  applyMiddleware(thunk),
+  /* eslint-disable no-underscore-dangle */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  /* eslint-enable */
 );
-/* eslint-enable */
+// ==================
+const store = createStore(rootReducer, enhancers);
 
 export default store;

@@ -29,6 +29,8 @@ const mapStateToProps = state => ({
   movies: state.movies.initialLoad
 });
 
+// movies: state.movies.initialLoad;
+
 const mapDispatchToProps = dispatch => ({
   getAPIData() {
     dispatch(getMoviesInTheaters());
