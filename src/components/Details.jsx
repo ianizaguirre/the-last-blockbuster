@@ -3,7 +3,7 @@
 import React, { Component, Fragment } from 'react';
 
 import { connect } from 'react-redux';
-import { getMovieDetails } from './../redux/actionCreators/search';
+import getMovieDetails from './../redux/actionCreators/movieFullView';
 
 class Details extends Component {
   componentDidMount() {

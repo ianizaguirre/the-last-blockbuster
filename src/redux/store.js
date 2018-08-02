@@ -2,15 +2,15 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 
 import thunk from 'redux-thunk';
 
+import movieFullView from './reducers/movieFullView';
 import currentMenuTerm from './reducers/menu';
-import { searchTerm, movies, movieFullView } from './reducers/search';
-
+import { searchTerm, movies } from './reducers/search';
 // ==================
 const rootReducer = combineReducers({
+  movieFullView,
   currentMenuTerm,
   searchTerm,
-  movies,
-  movieFullView
+  movies
 });
 // ==================
 const enhancers = compose(
