@@ -19,9 +19,10 @@ injectGlobal`
     height: 100%;
     /* margin: 0 auto; */
     font-family: 'Open Sans', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 `;
+// Body --> overflow: hidden;
 
 const renderApp = () => {
   render(

@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainPanel from './MainPanel';
+import MovieImage from './MovieImage';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -66,6 +67,8 @@ class Showcase extends React.Component {
           <FlexContainer>
             <MainPanel />
             <ShowcaseWrapper>
+              <MovieImage />
+
               <Gutter>
                 <GridContainer>{this.props.mainContent}</GridContainer>
               </Gutter>
