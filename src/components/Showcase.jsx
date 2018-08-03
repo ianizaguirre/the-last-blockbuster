@@ -56,8 +56,9 @@ const GridContainer = styled.div`
 // const Showcase = props => (
 class Showcase extends React.Component {
   render() {
-    console.log('=========BBBBBBB---->');
-    console.log(this.props.history);
+    console.log('------ inside Showcase.jsx -------');
+    console.log(`API KEY from .ENV ===👻👻👻👻👻👻===> ${process.env.API_KEY}`);
+    // console.log(this.props.history);
     return (
       <Router>
         <GridWrapper>

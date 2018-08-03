@@ -1,8 +1,9 @@
 /* eslint-disable */
 
-const api_key = 'ee0507eb3234dbbfe21b33cc94f96489';
+const api_key = process.env.API_KEY;
 const base_url = 'https://api.themoviedb.org/3';
 
+// https://www.themoviedb.org/talk/5717eea0c3a3686cb70022ff
 // https://developers.themoviedb.org/3/getting-started/search-and-query-for-details
 
 export default {

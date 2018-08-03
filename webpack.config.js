@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   context: __dirname,
@@ -29,9 +30,10 @@ module.exports = {
     chunks: true
   },
   mode: 'development',
-  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()],
+  plugins: [new Dotenv(), new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()],
   module: {
-    rules: [{
+    rules: [
+      {
         enforce: 'pre',
         test: /\.jsx?$/,
         loader: 'eslint-loader',
