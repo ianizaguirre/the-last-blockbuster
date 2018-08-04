@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainPanel from './MainPanel';
-import MovieImage from './MovieImage';
+import HeroPanel from './HeroPanel';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -43,7 +43,7 @@ const Gutter = styled.div`
 // =========
 const GridContainer = styled.div`
   display: grid;
-  border: 10px solid black;
+  // border: 10px solid #000000;
   grid-template-rows: auto;
   grid-gap: 36px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -67,7 +67,7 @@ class Showcase extends React.Component {
           <FlexContainer>
             <MainPanel />
             <ShowcaseWrapper>
-              <MovieImage />
+              <HeroPanel />
 
               <Gutter>
                 <GridContainer>{this.props.mainContent}</GridContainer>

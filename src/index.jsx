@@ -21,8 +21,12 @@ injectGlobal`
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
   }
+
+  h1, h2, h3, h4 {
+    margin: 0;
+  }
+
 `;
-// Body --> overflow: hidden;
 
 const renderApp = () => {
   render(

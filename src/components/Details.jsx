@@ -1,9 +1,15 @@
 /* eslint-disable */
 
 import React, { Component, Fragment } from 'react';
-
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import getMovieDetails from './../redux/actionCreators/movieFullView';
+
+const Wrapper = styled.div`
+  border: 10px solid #000000;
+  width: 100%;
+  margin: 0 auto;
+`;
 
 class Details extends Component {
   componentDidMount() {
@@ -16,20 +22,16 @@ class Details extends Component {
   }
 
   render() {
-    const { title, tagline, overview, release_date } = this.props.movieFullView;
+    const { tagline, overview, release_date } = this.props.movieFullView;
     return (
       <Fragment>
-        <p>Title</p>
-        {title}
+        <Wrapper>
+          <p>Overview</p>
+          {overview}
 
-        <p>Tagline</p>
-        {tagline}
-
-        <p>Overview</p>
-        {overview}
-
-        <p>Release Date</p>
-        {release_date}
+          <p>Release Date</p>
+          {release_date}
+        </Wrapper>
       </Fragment>
     );
   }

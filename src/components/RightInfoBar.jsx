@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Breadcrumb from './../containers/Breadcrumb';
 
 const InfoWrap = styled.div`
-  background: #24252a;
-  padding: 0.5em;
+  background: ${props => props.theme.bgLight};
+  padding: 0.5em 0.5em 0.5em 0;
 `;
 
 const Wrapper = styled.div`
@@ -19,8 +19,8 @@ const Wrapper = styled.div`
 
 const Heading = styled.h3`
   font-size: 17px;
-  font-weight: bold;
-  color: #f5f5f6d6;
+  font-weight: 600;
+  color: #ffffff;
   margin: 0;
 `;
 

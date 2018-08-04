@@ -10,8 +10,9 @@ const HeaderWrap = styled.div`
   align-items: center;
 `;
 
+// Searchbar width at 100% looks nicer flush
 const SearchGutter = styled.div`
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
 `;
 
