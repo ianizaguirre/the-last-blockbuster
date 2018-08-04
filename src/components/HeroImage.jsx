@@ -6,12 +6,12 @@ import styled from 'styled-components';
 
 import APIConnect from './../services/api-connect';
 
-import HeroCover from './HeroCover';
+// import HeroCover from './HeroCover';
 
-const Wrapper = styled.div`
-  position: relative;
-  height: 100%;
-`;
+// const Wrapper = styled.div`
+//   position: relative;
+//   height: 100%;
+// `;
 
 const ImageContainer = styled.div`
   position: absolute;
@@ -27,13 +27,9 @@ class HeroImage extends Component {
   render() {
     return (
       <Fragment>
-        <Wrapper>
-          <ImageContainer>
-            <Image alt="logo" src={`${APIConnect.imageUrl}original${this.props.heroImage}`} />
-          </ImageContainer>
-
-          <HeroCover />
-        </Wrapper>
+        <ImageContainer>
+          <Image alt="logo" src={`${APIConnect.imageUrl}original${this.props.heroImage}`} />
+        </ImageContainer>
       </Fragment>
     );
   }
