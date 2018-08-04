@@ -6,6 +6,24 @@ import styled from 'styled-components';
 
 import MovieCard from './../components/MovieCard';
 
+const Gutter = styled.div`
+  width: 95%;
+  margin: 0 auto;
+`;
+
+const GridContainer = styled.div`
+  border: 10px solid #000000;
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  justify-items: center;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+`;
+
 class MoviesInTheaters extends Component {
   componentDidMount() {
     this.props.getAPIData();
@@ -14,9 +32,13 @@ class MoviesInTheaters extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.movies
-          .filter(movie => `${movie.title}`.toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0)
-          .map(movie => <MovieCard key={movie.id} {...movie} />)}
+        <Gutter>
+          <GridContainer>
+            {this.props.movies
+              .filter(movie => `${movie.title}`.toUpperCase().indexOf(this.props.searchTerm.toUpperCase()) >= 0)
+              .map(movie => <MovieCard key={movie.id} {...movie} />)}
+          </GridContainer>
+        </Gutter>
       </Fragment>
     );
   }

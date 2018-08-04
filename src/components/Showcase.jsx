@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainPanel from './MainPanel';
-import HeroPanel from './HeroPanel';
+// import HeroPanel from './HeroPanel';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -35,24 +35,7 @@ const ShowcaseWrapper = styled.div`
   height: 100vh;
 `;
 
-const Gutter = styled.div`
-  width: 95%;
-  margin: 0 auto;
-`;
-
-// =========
-const GridContainer = styled.div`
-  display: grid;
-  // border: 10px solid #000000;
-  grid-template-rows: auto;
-  grid-gap: 36px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  justify-items: center;
-
-  margin-top: 30px;
-  margin-bottom: 30px;
-`;
+// =====================
 
 // const Showcase = props => (
 class Showcase extends React.Component {
@@ -66,13 +49,7 @@ class Showcase extends React.Component {
           <SidePanelWrapper>{this.props.sidePanel}</SidePanelWrapper>
           <FlexContainer>
             <MainPanel />
-            <ShowcaseWrapper>
-              <HeroPanel />
-
-              <Gutter>
-                <GridContainer>{this.props.mainContent}</GridContainer>
-              </Gutter>
-            </ShowcaseWrapper>
+            <ShowcaseWrapper>{this.props.mainContent}</ShowcaseWrapper>
           </FlexContainer>
         </GridWrapper>
       </Router>

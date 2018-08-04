@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import styled from 'styled-components';
 
-import APIConnect from './../services/api-connect';
+// import APIConnect from './../services/api-connect';
 
 import HeroImage from './HeroImage';
 
@@ -15,19 +15,25 @@ import HeroImage from './HeroImage';
 
 class HeroPanel extends Component {
   render() {
-    let showCaseBarComponent;
-    if (this.props.onDetailsPage === true) {
-      showCaseBarComponent = <HeroImage />;
-    } else {
-      showCaseBarComponent = '';
-    }
+    // let showCaseBarComponent;
+    // if (this.props.onDetailsPage === true) {
+    //   showCaseBarComponent = <HeroImage />;
+    // } else {
+    //   showCaseBarComponent = '';
+    // }
 
-    return <Fragment>{showCaseBarComponent}</Fragment>;
+    return (
+      <Fragment>
+        <HeroImage />
+      </Fragment>
+    );
   }
 }
 
-const mapStateToProps = state => ({
-  onDetailsPage: state.movieFullView.detailsPageIsOpen
-});
+// const mapStateToProps = state => ({
+//   onDetailsPage: state.movieFullView.detailsPageIsOpen
+// });
 
-export default connect(mapStateToProps)(HeroPanel);
+// export default connect(mapStateToProps)(HeroPanel);
+
+export default HeroPanel;

@@ -7,13 +7,13 @@ import type { Match } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import Showcase from './components/Showcase';
 import SidePanel from './components/SidePanel';
 
 import Example from './components/Example';
 import MoviesInTheaters from './containers/MoviesInTheaters';
-import Showcase from './components/Showcase';
 
-import Details from './components/Details';
+import MovieFull from './containers/MovieFull';
 
 // <Route exact path="/" component={App} />;
 // <Route exact path="/" component={props => <App routes={routes} {...props} />} />;
@@ -45,7 +45,7 @@ const routes = [
     path: '/details/:id',
     main: (props: { match: Match }) => {
       const selectedShow = props.match.params.id;
-      return <Details selectedShow={selectedShow} {...props} />;
+      return <MovieFull selectedShow={selectedShow} {...props} />;
     },
     sidebar: SidePanel
   }
