@@ -7,16 +7,18 @@ import { connect } from 'react-redux';
 import Details from './Details';
 
 const Wrapper = styled.div`
-  // position: absolute;
-  // z-index: 11;
+  // width: 100%;
 `;
 
 const TextContainer = styled.div`
   color: #fff;
   text-shadow: 0 0 15px #000;
   font-weight: 600;
-  // padding-top: 150px;
-  position: absolute;
+
+  padding-top: 150px;
+  text-align: center;
+
+  // position: relative;
 `;
 
 const Title = styled.h1`
@@ -25,15 +27,12 @@ const Title = styled.h1`
 
 const Tagline = styled.h2`
   font-size: 30px;
+
+  margin: 25px 0 25px 0;
 `;
 
 const DetailsContainer = styled.div`
-  // padding-top: 150px;
-  position: absolute;
-  top: 84%;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  margin-top: 100px;
 `;
 
 const Gutter = styled.div`
@@ -41,6 +40,7 @@ const Gutter = styled.div`
   margin: 0 auto;
 `;
 
+// HERO Cover is the JS Util Container
 class HeroCover extends Component {
   render() {
     const { title, tagline } = this.props.movieFullView;

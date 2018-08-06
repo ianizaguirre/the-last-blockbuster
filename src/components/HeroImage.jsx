@@ -1,25 +1,29 @@
 /* eslint-disable */
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';
 
 import APIConnect from './../services/api-connect';
 
-// import HeroCover from './HeroCover';
-
 // const Wrapper = styled.div`
-//   position: relative;
-//   height: 100%;
+
 // `;
 
 const ImageContainer = styled.div`
-  position: absolute;
+  background-color: #ccc;
+  width: 100%;
+
+  max-height: 35em;
+  overflow: hidden;
+
+  // filter: blur(5px);
 `;
 
 const Image = styled.img`
   display: block;
   margin: 0 auto;
+
   max-width: 100%;
   min-height: 35em;
   height: auto;
@@ -28,11 +32,9 @@ const Image = styled.img`
 class HeroImage extends Component {
   render() {
     return (
-      <Fragment>
-        <ImageContainer>
-          <Image alt="logo" src={`${APIConnect.imageUrl}original${this.props.heroImage}`} />
-        </ImageContainer>
-      </Fragment>
+      <ImageContainer>
+        <Image alt="logo" src={`${APIConnect.imageUrl}original${this.props.heroImage}`} />
+      </ImageContainer>
     );
   }
 }

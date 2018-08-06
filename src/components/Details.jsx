@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import getMovieDetails from './../redux/actionCreators/movieFullView';
 
 const Wrapper = styled.div`
-  border: 10px solid #000000;
-  width: 100%;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 15px -4px rgba(0, 0, 0, 0.5);
+  padding: 2em;
 `;
 
 class Details extends Component {
@@ -26,7 +26,6 @@ class Details extends Component {
     return (
       <Fragment>
         <Wrapper>
-          <p>Overview</p>
           {overview}
 
           <p>Release Date</p>
