@@ -20,7 +20,9 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   display: block;
   margin: 0 auto;
-  width: 100%;
+  max-width: 100%;
+  min-height: 35em;
+  height: auto;
 `;
 
 class HeroImage extends Component {

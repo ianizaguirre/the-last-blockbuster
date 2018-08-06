@@ -3,23 +3,14 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
-import Details from './../components/Details';
+// import Details from './../components/Details';
 import HeroImage from './../components/HeroImage';
 import HeroCover from './../components/HeroCover';
 
 const Wrapper = styled.div`
   position: relative;
   height: 100%;
-  background: red;
-`;
-
-const SoAbso = styled.div`
-  position: absolute;
-`;
-
-const Gutter = styled.div`
-  width: 95%;
-  margin: 0 auto;
+  background: #cccccc;
 `;
 
 class MovieFull extends Component {
@@ -28,12 +19,7 @@ class MovieFull extends Component {
       <Fragment>
         <Wrapper>
           <HeroImage />
-          <HeroCover />
-          <SoAbso>
-            <Gutter>
-              <Details selectedShow={this.props.selectedShow} />
-            </Gutter>
-          </SoAbso>
+          <HeroCover selectedShow={this.props.selectedShow} />
         </Wrapper>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
