@@ -13,11 +13,12 @@ import APIConnect from './../services/api-connect';
 const ImageContainer = styled.div`
   background-color: #ccc;
   width: 100%;
+  // // height: auto;
 
-  max-height: 35em;
+  max-height: 40em;
   overflow: hidden;
 
-  // filter: blur(5px);
+  // // filter: blur(5px);
 `;
 
 const Image = styled.img`

@@ -11,11 +11,20 @@ import Example from './../components/Example';
 
 const HeroWrapper = styled.div`
   position: relative;
+
+  min-height: 42em;
+  overflow: hidden;
+
+  // // height: 600px;
+  // // overflow: hidden;
 `;
 
 const ImgContainer = styled.div`
   position: absolute;
   width: 100%;
+
+  max-height: 37em;
+  overflow: hidden;
 
   &::after {
     position: absolute;
@@ -31,13 +40,15 @@ const ImgContainer = styled.div`
 `;
 
 const UtilContainer = styled.div`
-  max-width: 60em;
-  margin: 0 auto;
-
   position: relative;
-  // overflow: hidden;
+  // margin: 0 auto;
+
+  // // width: 90%;
+  // // margin: 0 auto;
+  // // height: 100%;
 `;
 
+// =======================================
 const LayoutWrapper = styled.div`
   max-width: 90em;
   margin: 0 auto;

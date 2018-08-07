@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import Details from './Details';
 
 const Wrapper = styled.div`
-  // width: 100%;
+  background: inherit;
 `;
 
 const TextContainer = styled.div`
@@ -15,20 +15,28 @@ const TextContainer = styled.div`
   text-shadow: 0 0 15px #000;
   font-weight: 600;
 
-  padding-top: 150px;
-  text-align: center;
+  padding-top: 237px;
 
-  // position: relative;
+  // padding-top: 150px;
+  // text-align: center;
+
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
 `;
 
 const Title = styled.h1`
   font-size: 80px;
+
+  width: 50%;
 `;
 
 const Tagline = styled.h2`
   font-size: 30px;
 
   margin: 25px 0 25px 0;
+
+  width: 50%;
 `;
 
 const DetailsContainer = styled.div`
@@ -36,8 +44,8 @@ const DetailsContainer = styled.div`
 `;
 
 const Gutter = styled.div`
-  width: 95%;
-  margin: 0 auto;
+  // width: 95%;
+  // margin: 0 auto;
 `;
 
 // HERO Cover is the JS Util Container

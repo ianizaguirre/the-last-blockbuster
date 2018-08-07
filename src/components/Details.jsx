@@ -6,8 +6,10 @@ import { connect } from 'react-redux';
 import getMovieDetails from './../redux/actionCreators/movieFullView';
 
 const Wrapper = styled.div`
+  display: none;
+
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 15px -4px rgba(0, 0, 0, 0.5);
+  // // box-shadow: 0px 4px 15px -4px rgba(0, 0, 0, 0.5);
   padding: 2em;
 `;
 
