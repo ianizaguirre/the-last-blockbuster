@@ -8,7 +8,7 @@
 
 &nbsp;
 
-* ** Project is currently under construction - First version is not deployed yet **
+* **Project is currently under construction - First version is not deployed yet**
 
 ---
 
