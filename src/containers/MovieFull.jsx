@@ -12,8 +12,11 @@ import Example from './../components/Example';
 const HeroWrapper = styled.div`
   position: relative;
 
-  min-height: 42em;
+  // min-height: 42em;
+  min-height: 600px;
   overflow: hidden;
+
+  margin-bottom: 50px;
 
   // // height: 600px;
   // // overflow: hidden;
@@ -22,8 +25,9 @@ const HeroWrapper = styled.div`
 const ImgContainer = styled.div`
   position: absolute;
   width: 100%;
+  height: 100%;
 
-  max-height: 37em;
+  // //  max-height: 37em;
   overflow: hidden;
 
   &::after {
@@ -41,6 +45,8 @@ const ImgContainer = styled.div`
 
 const UtilContainer = styled.div`
   position: relative;
+  z-index: 11;
+
   // margin: 0 auto;
 
   // // width: 90%;
@@ -68,12 +74,12 @@ class MovieFull extends Component {
       <Fragment>
         <HeroWrapper>
           <ImgContainer>
-            <HeroImage />
+            <HeroImage>
+              <UtilContainer>
+                <HeroCover selectedShow={this.props.selectedShow} />
+              </UtilContainer>
+            </HeroImage>
           </ImgContainer>
-
-          <UtilContainer>
-            <HeroCover selectedShow={this.props.selectedShow} />
-          </UtilContainer>
         </HeroWrapper>
         <LayoutWrapper>
           <MiniTitle>Overview</MiniTitle>

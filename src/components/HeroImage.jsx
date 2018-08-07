@@ -13,6 +13,7 @@ import APIConnect from './../services/api-connect';
 const ImageContainer = styled.div`
   background-color: #ccc;
   width: 100%;
+  height: 100%;
   // // height: auto;
 
   max-height: 40em;
@@ -42,6 +43,7 @@ const Image = styled.div`
 
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
 `;
 
 // background-image: url(https://image.tmdb.org/t/p/original/cfbjFQ14hSTgXChBEvaEjFiUaKb.jpg);
@@ -52,7 +54,9 @@ class HeroImage extends Component {
   render() {
     return (
       <ImageContainer>
-        <Image style={{ backgroundImage: `url(${APIConnect.imageUrl}original${this.props.heroImage})` }} />
+        <Image style={{ backgroundImage: `url(${APIConnect.imageUrl}original${this.props.heroImage})` }}>
+          {this.props.children}
+        </Image>
       </ImageContainer>
     );
   }

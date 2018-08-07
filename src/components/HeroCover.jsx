@@ -28,7 +28,7 @@ const TextContainer = styled.div`
 const Title = styled.h1`
   font-size: 80px;
 
-  width: 50%;
+  width: 55%;
 `;
 
 const Tagline = styled.h2`
@@ -36,7 +36,7 @@ const Tagline = styled.h2`
 
   margin: 25px 0 25px 0;
 
-  width: 50%;
+  width: 55%;
 `;
 
 const DetailsContainer = styled.div`
