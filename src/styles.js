@@ -21,3 +21,10 @@ export const FlexContainer = styled.div`
       height: 100%;
     `};
 `;
+
+// ===== Maybe this is just for the intro text?
+export const P = styled.p`
+  color: ${props => props.theme.greyText1};
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+`;

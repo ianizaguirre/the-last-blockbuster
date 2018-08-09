@@ -3,7 +3,7 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import getMovieDetails from './../redux/actionCreators/movieFullView';
+import { getMovieDetails, getMovieCertification } from './../redux/actionCreators/movieFullView';
 
 const Wrapper = styled.div`
   display: none;
@@ -46,6 +46,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getAPIData() {
     dispatch(getMovieDetails(ownProps.selectedShow));
+    dispatch(getMovieCertification(ownProps.selectedShow));
   }
 });
 

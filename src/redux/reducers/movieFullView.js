@@ -1,9 +1,10 @@
-import { GET_MOVIE_DETAILS } from './../actions';
+import { GET_MOVIE_DETAILS, GET_MOVIE_CERTIFICATION } from './../actions';
 
 // ==== movieFullView Object Root - nested values ===
 const initialState = {
   detailsPageIsOpen: false,
-  details: {}
+  details: {},
+  certification: {}
 };
 
 const movieFullView = (state = initialState, action) => {
@@ -13,6 +14,11 @@ const movieFullView = (state = initialState, action) => {
         ...state,
         detailsPageIsOpen: !state.detailsPageIsOpen,
         details: action.payload
+      };
+    case GET_MOVIE_CERTIFICATION:
+      return {
+        ...state,
+        certification: action.payload
       };
     default:
       return state;

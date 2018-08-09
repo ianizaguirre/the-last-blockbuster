@@ -2,6 +2,8 @@
 
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
+import { P } from './../styles';
+
 import { connect } from 'react-redux';
 
 import HeroImage from './../components/HeroImage';
@@ -11,14 +13,12 @@ import Example from './../components/Example';
 
 const HeroWrapper = styled.div`
   position: relative;
-
-  // min-height: 42em;
+  // // min-height: 42em;
   min-height: 600px;
   overflow: hidden;
 
   margin-bottom: 50px;
 
-  // // height: 600px;
   // // overflow: hidden;
 `;
 
@@ -27,7 +27,6 @@ const ImgContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  // //  max-height: 37em;
   overflow: hidden;
 
   &::after {
@@ -43,7 +42,7 @@ const ImgContainer = styled.div`
   }
 `;
 
-const UtilContainer = styled.div`
+const UtilContainerChild = styled.div`
   position: relative;
   z-index: 11;
 
@@ -55,37 +54,84 @@ const UtilContainer = styled.div`
 `;
 
 // =======================================
-const LayoutWrapper = styled.div`
-  max-width: 90em;
+const Gutter = styled.div`
+  width: 90%;
   margin: 0 auto;
-  width: 100%;
+`;
+const LayoutWrapper = styled.div`
+  // max-width: 90em;
+  // margin: 0 auto;
+  // width: 100%;
   position: relative;
 `;
 
 // =========
-const MiniTitle = styled.div`
-  font-size: 25px;
+const ExampleTemp = styled.div`
+  padding-top: 100px;
+`;
+
+// ===================== GRID Temp - Move To Template ======
+
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-areas: 'intro-metadata-col intro-text-col';
+  grid-template-columns: 1fr 2fr;
+
+  // // grid-template-rows: auto;
+  //  // grid-template-areas: 'sidePanel content-main-1 content-main-2';
+`;
+
+// =========== GRID Temp - 3 mini details - Move To Template ======
+
+const GridWrapperMini = styled.div`
+  display: grid;
+  grid-template-areas: 'runtime-block certification-block main-genre-block';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+`;
+const RunTime = styled.div`
+  grid-area: runtime-block;
+  grid-column: span 1;
+  grid-row: span 1;
+`;
+const Certification = styled.div`
+  grid-area: certification-block;
+  grid-column: span 1;
+  grid-row: span 1;
+`;
+const MainGenre = styled.div`
+  grid-area: main-genre-block;
+  grid-column: span 2;
+  grid-row: span 1;
 `;
 
 class MovieFull extends Component {
   render() {
-    const { tagline, overview, release_date } = this.props.movieFullView;
+    const { overview, runtime } = this.props.movieFullView;
     return (
       <Fragment>
         <HeroWrapper>
           <ImgContainer>
             <HeroImage>
-              <UtilContainer>
+              <UtilContainerChild>
                 <HeroCover selectedShow={this.props.selectedShow} />
-              </UtilContainer>
+              </UtilContainerChild>
             </HeroImage>
           </ImgContainer>
         </HeroWrapper>
-        <LayoutWrapper>
-          <MiniTitle>Overview</MiniTitle>
-          {overview}
-          <Example />
-        </LayoutWrapper>
+        <Gutter>
+          <LayoutWrapper>
+            <GridWrapper>
+              <GridWrapperMini>
+                <RunTime>{runtime}</RunTime> <Certification>R??</Certification> <MainGenre>Comedy??</MainGenre>
+              </GridWrapperMini>
+              <P> {overview} </P>
+            </GridWrapper>
+            <ExampleTemp>
+              <Example />
+            </ExampleTemp>
+          </LayoutWrapper>
+        </Gutter>
       </Fragment>
     );
   }

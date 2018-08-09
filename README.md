@@ -22,6 +22,12 @@
 
 &nbsp;
 
+#### TODO
+
+#### Release v1
+Pages
+-- [x] Now in theater
+- [ ] Minimize bundle size
 ---
 
 ## Getting Started

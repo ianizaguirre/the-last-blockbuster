@@ -30,6 +30,12 @@ export default {
 
   getMovieDetails(movieId) {
     return this.apiCall(`movie/${movieId}`);
+  },
+
+  // Can this be Appended to to above Details Function??? to save an extra call
+  // pg-13, R, etc.
+  getMovieCertification(movieId) {
+    return this.apiCall(`movie/${movieId}/release_dates`);
   }
 
   // getPopularMovies() {

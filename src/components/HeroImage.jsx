@@ -6,10 +6,6 @@ import styled from 'styled-components';
 
 import APIConnect from './../services/api-connect';
 
-// const Wrapper = styled.div`
-
-// `;
-
 const ImageContainer = styled.div`
   background-color: #ccc;
   width: 100%;
