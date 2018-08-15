@@ -7,7 +7,16 @@ const initialState = {
   certification: {}
 };
 
-// Add Reducer Logic To filter out Movie Certification !!
+function filterOutCertification(getReleaseDates) {
+  // Retrieve array holding ALL "U.S." Objects which then gets Release Dates Array of Objects
+  const isoUS = getReleaseDates.filter(item => item.iso_3166_1 === 'US')[0].release_dates;
+
+  const typeTheatrical = isoUS.filter(item => item.type === 3)[0];
+
+  const movieCertification = typeTheatrical.certification;
+
+  return movieCertification;
+}
 
 const movieFullView = (state = initialState, action) => {
   switch (action.type) {
@@ -20,7 +29,7 @@ const movieFullView = (state = initialState, action) => {
     case GET_MOVIE_CERTIFICATION:
       return {
         ...state,
-        certification: action.payload
+        certification: filterOutCertification(action.payload)
       };
     default:
       return state;

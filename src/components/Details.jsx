@@ -29,7 +29,13 @@ class Details extends Component {
       <Fragment>
         <Wrapper>
           {overview}
-
+          <p>
+            This component is important becuase it is connected to HeroCover.jsx which makes it receive the connection
+            to the "SelectedShow" prop it needs... this then trigers the "On Page Switch" in redux etc....... BUT this
+            component is not showing in the front end which makes me thing I need to refactor .... this should be the
+            component that hold the overview information instead of that overview information living inside of
+            MovieFull.jsx
+          </p>
           <p>Release Date</p>
           {release_date}
         </Wrapper>
@@ -40,7 +46,8 @@ class Details extends Component {
 
 const mapStateToProps = state => ({
   pageIsOpen: state.movieFullView.detailsPageIsOpen,
-  movieFullView: state.movieFullView.details
+  movieFullView: state.movieFullView.details,
+  certification: state.movieFullView.certification
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
