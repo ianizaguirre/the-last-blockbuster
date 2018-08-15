@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { connect } from 'react-redux';
 
-import Details from './Details';
+// import Details from './Details';
 
 const Wrapper = styled.div`
   background: inherit;
@@ -39,14 +39,14 @@ const Tagline = styled.h2`
   width: 55%;
 `;
 
-const DetailsContainer = styled.div`
-  margin-top: 100px;
-`;
+// const DetailsContainer = styled.div`
+//   margin-top: 100px;
+// `;
 
-const Gutter = styled.div`
-  // width: 95%;
-  // margin: 0 auto;
-`;
+// const Gutter = styled.div`
+//   // width: 95%;
+//   // margin: 0 auto;
+// `;
 
 // HERO Cover is the JS Util Container
 class HeroCover extends Component {
@@ -58,15 +58,16 @@ class HeroCover extends Component {
           <Title> {title} </Title>
           <Tagline>{tagline}</Tagline>
         </TextContainer>
-        <DetailsContainer>
-          <Gutter>
-            <Details selectedShow={this.props.selectedShow} />
-          </Gutter>
-        </DetailsContainer>
       </Wrapper>
     );
   }
 }
+
+// <DetailsContainer>
+//   <Gutter>
+//     <Details selectedShow={this.props.selectedShow} />
+//   </Gutter>
+// </DetailsContainer>;
 
 const mapStateToProps = state => ({
   movieFullView: state.movieFullView.details

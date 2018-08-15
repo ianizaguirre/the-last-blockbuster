@@ -2,16 +2,46 @@
 
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
+import { P } from './../styles';
 import { connect } from 'react-redux';
 import { getMovieDetails, getMovieCertification } from './../redux/actionCreators/movieFullView';
 
-const Wrapper = styled.div`
-  display: none;
+// ===================== GRID Temp - Move To Template ======
 
-  background: rgba(255, 255, 255, 1);
-  // // box-shadow: 0px 4px 15px -4px rgba(0, 0, 0, 0.5);
-  padding: 2em;
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-areas: 'intro-metadata-col intro-text-col';
+  grid-template-columns: 1fr 2fr;
+
+  // // grid-template-rows: auto;
+  //  // grid-template-areas: 'sidePanel content-main-1 content-main-2';
 `;
+
+// =========== GRID Temp - 3 mini details - Move To Template ======
+
+const GridWrapperMini = styled.div`
+  display: grid;
+  grid-template-areas: 'runtime-block certification-block main-genre-block';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+`;
+const RunTime = styled.div`
+  grid-area: runtime-block;
+  grid-column: span 1;
+  grid-row: span 1;
+`;
+const Certification = styled.div`
+  grid-area: certification-block;
+  grid-column: span 1;
+  grid-row: span 1;
+`;
+const MainGenre = styled.div`
+  grid-area: main-genre-block;
+  grid-column: span 2;
+  grid-row: span 1;
+`;
+
+// ==========================================================
 
 class Details extends Component {
   componentDidMount() {
@@ -24,21 +54,18 @@ class Details extends Component {
   }
 
   render() {
-    const { tagline, overview, release_date } = this.props.movieFullView;
+    const { tagline, overview, runtime, release_date } = this.props.movieFullView;
+
     return (
       <Fragment>
-        <Wrapper>
-          {overview}
-          <p>
-            This component is important becuase it is connected to HeroCover.jsx which makes it receive the connection
-            to the "SelectedShow" prop it needs... this then trigers the "On Page Switch" in redux etc....... BUT this
-            component is not showing in the front end which makes me thing I need to refactor .... this should be the
-            component that hold the overview information instead of that overview information living inside of
-            MovieFull.jsx
-          </p>
-          <p>Release Date</p>
-          {release_date}
-        </Wrapper>
+        <GridWrapper>
+          <GridWrapperMini>
+            <RunTime>{runtime}</RunTime>
+            <Certification>{this.props.certification}</Certification>
+            <MainGenre>Comedy??</MainGenre>
+          </GridWrapperMini>
+          <P> {overview} </P>
+        </GridWrapper>
       </Fragment>
     );
   }
