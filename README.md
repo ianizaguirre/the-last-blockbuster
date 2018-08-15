@@ -26,11 +26,17 @@
 
 #### Release v1
 Pages
--- [x] Now in theater
+- - [x] Now in theater
+
 - [ ] Minimize bundle size
+- [ ] Implement Algolia Search API
+
+
 ---
 
-## Getting Started
+## Development
+
+#### Getting Started
 Install packages:
 ```
 yarn install

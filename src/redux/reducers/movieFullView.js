@@ -7,6 +7,8 @@ const initialState = {
   certification: {}
 };
 
+// Add Reducer Logic To filter out Movie Certification !!
+
 const movieFullView = (state = initialState, action) => {
   switch (action.type) {
     case GET_MOVIE_DETAILS:

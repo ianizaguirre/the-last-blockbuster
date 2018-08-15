@@ -16,6 +16,7 @@ _site/
 # Me
 .env
 WorkFlowLog.md
+haters/
 
 # ========= TEMPORARY ======= Later, Move Key to an ENV
 
