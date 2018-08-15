@@ -6,6 +6,8 @@ import { P } from './../styles';
 import { connect } from 'react-redux';
 import { getMovieDetails, getMovieCertification } from './../redux/actionCreators/movieFullView';
 
+import GenreList from './GenreList';
+
 // ===================== GRID Temp - Move To Template ======
 
 const GridWrapper = styled.div`
@@ -66,7 +68,7 @@ class Details extends Component {
   };
 
   render() {
-    const { tagline, overview, runtime, release_date } = this.props.movieFullView;
+    const { tagline, overview, runtime, release_date, genres } = this.props.movieFullView;
 
     const movieRuntime = this.runtimeConvert(runtime);
 
@@ -76,7 +78,9 @@ class Details extends Component {
           <GridWrapperMini>
             <RunTime>{movieRuntime}</RunTime>
             <Certification>{this.props.certification}</Certification>
-            <MainGenre>Comedy??</MainGenre>
+            <MainGenre>
+              <GenreList />
+            </MainGenre>
           </GridWrapperMini>
           <P> {overview} </P>
         </GridWrapper>

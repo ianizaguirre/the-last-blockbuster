@@ -38,7 +38,7 @@ const ShowcaseWrapper = styled.div`
 // =====================
 
 // const Showcase = props => (
-class Showcase extends React.Component {
+class Showcase extends Component {
   render() {
     console.log('------ inside Showcase.jsx -------');
     console.log(`API KEY from .ENV ===👻👻👻👻👻👻===> ${process.env.API_KEY}`);

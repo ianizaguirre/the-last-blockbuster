@@ -4,7 +4,8 @@ import { GET_MOVIE_DETAILS, GET_MOVIE_CERTIFICATION } from './../actions';
 const initialState = {
   detailsPageIsOpen: false,
   details: {},
-  certification: []
+  certification: [],
+  genres: []
 };
 
 const movieFullView = (state = initialState, action) => {
@@ -13,7 +14,8 @@ const movieFullView = (state = initialState, action) => {
       return {
         ...state,
         detailsPageIsOpen: !state.detailsPageIsOpen,
-        details: action.payload
+        details: action.payload,
+        genres: action.payload.genres
       };
     case GET_MOVIE_CERTIFICATION:
       return {
