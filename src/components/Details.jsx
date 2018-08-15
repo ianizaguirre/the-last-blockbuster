@@ -42,6 +42,10 @@ const MainGenre = styled.div`
 `;
 
 // ==========================================================
+// function formatRunTime() {
+
+// }
+// ==========================================================
 
 class Details extends Component {
   componentDidMount() {
@@ -53,14 +57,24 @@ class Details extends Component {
     this.props.getAPIData();
   }
 
+  runtimeConvert = data => {
+    const hours = Math.floor(data / 60);
+    const minutes = Math.floor(data % 60);
+
+    const result = `${hours} HR ${minutes} MIN`;
+    return result;
+  };
+
   render() {
     const { tagline, overview, runtime, release_date } = this.props.movieFullView;
+
+    const movieRuntime = this.runtimeConvert(runtime);
 
     return (
       <Fragment>
         <GridWrapper>
           <GridWrapperMini>
-            <RunTime>{runtime}</RunTime>
+            <RunTime>{movieRuntime}</RunTime>
             <Certification>{this.props.certification}</Certification>
             <MainGenre>Comedy??</MainGenre>
           </GridWrapperMini>
