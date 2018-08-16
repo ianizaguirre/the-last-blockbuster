@@ -3,42 +3,42 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
+const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 6px;
+  grid-auto-flow: row;
+`;
+const GridItem = styled.div`
+  font-weight: 400;
+  cursor: pointer;
+  color: white;
+  background-color: #fe9700; // TEMP COLOR
+  font-size: 18px;
+  justify-self: left;
+  padding: 0.5em 1em;
+`;
+
 class GenreList extends Component {
   handleMovieGenres = data => {
-    const result = data.filter(genresGroup => genresGroup).map(genre => genre.name);
+    const result = data.map(genre => <GridItem key={genre.id}>{genre.name}</GridItem>);
     return result;
   };
+
   render() {
-    console.log('hiiiiiii');
-    console.log(this.props.genres);
-    // const showMovieGenres = 'hi';
+    // console.log('hiiiiiii');
+    // console.log(this.props.genres);
+
     const showMovieGenres = this.handleMovieGenres(this.props.genres);
-    console.log('----------->>>');
-    console.log(`${showMovieGenres}`);
+
     return (
       <Fragment>
-        <div>{showMovieGenres}</div>
+        <GridWrapper>{showMovieGenres}</GridWrapper>
       </Fragment>
     );
   }
 }
-
-// export default GenreList;
-
-// const mapStateToProps = state => ({
-//   movieGenres: state.movieFullView.details.genres
-// });
-
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//   getAPIData() {
-//     dispatch(getMovieDetails(ownProps.selectedShow));
-//   }
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(GenreList);
 
 const mapStateToProps = state => ({
   genres: state.movieFullView.genres
