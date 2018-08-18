@@ -24,15 +24,34 @@
 
 #### TODO
 
-#### Release v1
+#### Release v1.00
 - Pages
-  - [x] Now in theater
+  - [ ] Home
+  - [ ] About
+  - [x] Now In Theaters
 
-- [ ] Minimize bundle size
-- [ ] Implement Algolia Search API
+-Add
+  - [ ] Flow
+  - [ ] Adobe TypeKit
+  - [ ] Font Awesome
 
+&nbsp;
+
+#### v1.10
+- Pages
+  - [ ] Popular
+  - [ ] User Signup
+  - [ ] User Settings / Favorites list
+
+- Add
+  - [ ] Media Queries
+  - [ ] Algolia Search API
+  - [ ] Jest tests
+
+&nbsp;
 
 ---
+&nbsp;
 
 ## Development
 
