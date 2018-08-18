@@ -30,7 +30,7 @@
   - [ ] About
   - [x] Now In Theaters
 
--Add
+- Add
   - [ ] Flow
   - [ ] Adobe TypeKit
   - [ ] Font Awesome
