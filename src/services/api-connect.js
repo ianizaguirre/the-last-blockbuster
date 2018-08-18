@@ -35,6 +35,7 @@ export default {
 
   // Can this be Appended to to above Details Function??? to save an extra call
   // pg-13, R, etc.
+  // Instead of doing a filter can we just append the parameter to the call?
   getMovieCertification(movieId) {
     return this.apiCall(`movie/${movieId}/release_dates`);
   }

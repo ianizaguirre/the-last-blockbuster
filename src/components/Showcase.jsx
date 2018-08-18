@@ -3,6 +3,8 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
+import Footer from './Footer';
+
 import MainPanel from './MainPanel';
 
 const GridWrapper = styled.div`
@@ -32,6 +34,8 @@ const ShowcaseWrapper = styled.div`
 
   overflow: auto;
   height: 100vh;
+
+  display: grid; /* This helps make Sticky Footer */
 `;
 
 // =====================
@@ -44,13 +48,18 @@ class Showcase extends Component {
     // console.log(this.props.history);
     return (
       <Router>
-        <GridWrapper>
-          <SidePanelWrapper>{this.props.sidePanel}</SidePanelWrapper>
-          <FlexContainer>
-            <MainPanel />
-            <ShowcaseWrapper>{this.props.mainContent}</ShowcaseWrapper>
-          </FlexContainer>
-        </GridWrapper>
+        <Fragment>
+          <GridWrapper>
+            <SidePanelWrapper>{this.props.sidePanel}</SidePanelWrapper>
+            <FlexContainer>
+              <MainPanel />
+              <ShowcaseWrapper>
+                {this.props.mainContent}
+                <Footer />
+              </ShowcaseWrapper>
+            </FlexContainer>
+          </GridWrapper>
+        </Fragment>
       </Router>
       // );
     );

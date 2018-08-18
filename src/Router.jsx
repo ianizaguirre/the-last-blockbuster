@@ -60,13 +60,13 @@ const Router = () => (
         exact
         path="/"
         component={props => {
-          const selectedMain = routes.map(route => (
+          const handleMain = routes.map(route => (
             <Route key={route.path} path={route.path} exact={route.exact} component={route.main} />
           ));
-          const selectedSidebar = routes.map(route => (
+          const handleSidebar = routes.map(route => (
             <Route key={route.path} path={route.path} exact={route.exact} component={route.sidebar} />
           ));
-          return <Showcase mainContent={selectedMain} sidePanel={selectedSidebar} {...props} />;
+          return <Showcase mainContent={handleMain} sidePanel={handleSidebar} {...props} />;
         }}
       />;
       <Route component={FourOhFour} />

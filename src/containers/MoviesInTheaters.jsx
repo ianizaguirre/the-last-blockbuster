@@ -6,6 +6,8 @@ import styled from 'styled-components';
 
 import MovieCard from './../components/MovieCard';
 
+// import Footer from './../components/Footer';
+
 const Gutter = styled.div`
   width: 95%;
   margin: 0 auto;
