@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainPanel from './MainPanel';
-// import HeroPanel from './HeroPanel';
 
 const GridWrapper = styled.div`
   display: grid;

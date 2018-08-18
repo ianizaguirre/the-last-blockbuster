@@ -44,10 +44,6 @@ const MainGenre = styled.div`
 `;
 
 // ==========================================================
-// function formatRunTime() {
-
-// }
-// ==========================================================
 
 class Details extends Component {
   componentDidMount() {

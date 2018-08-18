@@ -25,8 +25,8 @@
 #### TODO
 
 #### Release v1
-Pages
-- - [x] Now in theater
+- Pages
+  - [x] Now in theater
 
 - [ ] Minimize bundle size
 - [ ] Implement Algolia Search API
@@ -37,6 +37,8 @@ Pages
 ## Development
 
 #### Getting Started
+Fork or download this repo and run `yarn install` in `the-last-blockbuster` folder with the `package.json` file.
+
 Install packages:
 ```
 yarn install
@@ -69,3 +71,7 @@ Run tests:
 yarn test
 ```
 TMdb api documentation can be found at: https://developers.themoviedb.org/3/getting-started
+
+Then you do some work.
+
+When you are ready for prime time, you can just submit a PR to this repo and it will be deployed once it's accepted.

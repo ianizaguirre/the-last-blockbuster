@@ -10,33 +10,14 @@ const ImageContainer = styled.div`
   background-color: #ccc;
   width: 100%;
   height: 100%;
-  // // height: auto;
-
   max-height: 40em;
   overflow: hidden;
-
+  // // height: auto;
   // // filter: blur(5px);
 `;
 
-// const Image = styled.img`
-//   display: block;
-//   margin: 0 auto;
-
-//   max-width: 100%;
-//   min-height: 35em;
-//   height: auto;
-// `;
-
-// <Image alt="logo" src={`${APIConnect.imageUrl}original${this.props.heroImage}`} />;
-
 const Image = styled.div`
-  // display: block;
-  // margin: 0 auto;
-
-  // max-width: 100%;
   min-height: 35em;
-  // height: auto;
-
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
