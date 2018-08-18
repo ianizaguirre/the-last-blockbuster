@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+const _ = undefined;
 const api_key = process.env.API_KEY;
 const base_url = 'https://api.themoviedb.org/3';
 
@@ -25,7 +26,7 @@ export default {
 
   // === Movies Now Playing IN Theaters ===
   getNowPlaying() {
-    return this.apiCall('movie/now_playing');
+    return this.apiCall('movie/now_playing', _, `&language=en-US&region=US`);
   },
 
   getMovieDetails(movieId) {
