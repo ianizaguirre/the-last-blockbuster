@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 const Heading = styled.h3`
   font-size: 17px;
   font-weight: 600;
-  color: #ffffff;
+  color: #e1e1e1;
   margin: 0;
 `;
 

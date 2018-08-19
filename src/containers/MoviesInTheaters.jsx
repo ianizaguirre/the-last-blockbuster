@@ -6,6 +6,8 @@ import styled from 'styled-components';
 
 import MovieCard from './../components/MovieCard';
 
+import Pagination from './../components/Pagination';
+
 // import Footer from './../components/Footer';
 
 const Gutter = styled.div`
@@ -41,6 +43,7 @@ class MoviesInTheaters extends Component {
               .map(movie => <MovieCard key={movie.id} {...movie} />)}
           </GridContainer>
         </Gutter>
+        <Pagination />
       </Fragment>
     );
   }
