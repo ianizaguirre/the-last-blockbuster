@@ -50,6 +50,10 @@ const Image = styled.img`
   // }
 `;
 
+const MetaWrapper = styled.div`
+  margin: 1em 0 1em 0;
+`;
+
 const Title = styled.h4`
   font-size: ${props => props.theme.h4Size};
   font-weight: ${props => props.theme.semiBold};
@@ -67,7 +71,9 @@ class MovieCard extends Component {
             <Image alt="logo" src={`${APIConnect.imageUrl}w500${poster_path}`} />
           </FogWrapper>
 
-          <Title>{title}</Title>
+          <MetaWrapper>
+            <Title>{title}</Title>
+          </MetaWrapper>
         </WrapperLink>
       </GridContainer>
     );
