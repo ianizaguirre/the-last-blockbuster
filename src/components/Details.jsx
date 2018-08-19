@@ -2,6 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
+import runtimeConvert from './../utils/movieRuntimeFormat.js';
 import { P } from './../styles';
 import { connect } from 'react-redux';
 import { getMovieDetails, getMovieCertification } from './../redux/actionCreators/movieFullView';
@@ -55,18 +56,10 @@ class Details extends Component {
     this.props.getAPIData();
   }
 
-  runtimeConvert = data => {
-    const hours = Math.floor(data / 60);
-    const minutes = Math.floor(data % 60);
-
-    const result = `${hours} HR ${minutes} MIN`;
-    return result;
-  };
-
   render() {
     const { tagline, overview, runtime, release_date, genres } = this.props.movieFullView;
 
-    const movieRuntime = this.runtimeConvert(runtime);
+    const movieRuntime = runtimeConvert(runtime);
 
     return (
       <Fragment>
