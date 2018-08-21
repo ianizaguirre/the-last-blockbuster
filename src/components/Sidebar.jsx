@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import { getCurrentMenuTerm } from './../redux/actionCreators/menu.js';
+// import { getCurrentMenuTerm } from './../redux/actionCreators/menu.js';
+//  getCurrentMenuTerm is a default export so no {} around it
+import getCurrentMenuTerm from './../redux/actionCreators/menu.js';
 
 const Ul = styled.ul`
   padding: 0;

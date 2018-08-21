@@ -8,10 +8,12 @@ const Wrapper = styled.div`
 `;
 
 const MyFooter = styled.footer`
-  background: silver;
+  background: #f7f7f7;
+  border-top: 1px solid #ececec;
+  margin-top: 50px;
+
   width: 100%;
   padding: 2px;
-  margin-top: 30px;
   grid-row-start: 2;
   grid-row-end: 3;
 `;

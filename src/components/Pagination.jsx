@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
 // import { getMoviesInTheaters } from './../redux/actionCreators/search';
-import { getCurrentPageNumber } from './../redux/actionCreators/search';
+import { getCurrentPageNumber, getMoviesInTheaters } from './../redux/actionCreators/search';
 
 import { connect } from 'react-redux';
 
@@ -71,14 +71,17 @@ const mapStateToProps = state => ({
 //   mapDispatchToProps
 // )(Pagination);
 
+// const mapDispatchToProps = dispatch => ({
+//   updatePageNumber: () => dispatch(getCurrentPageNumber())
+// });
+
+// const mapDispatchToProps = dispatch => ({
+//   updatePageNumber: pageNumber => dispatch(getCurrentPageNumber(pageNumber))
+// });
+
 const mapDispatchToProps = dispatch => ({
-  // getAPIData() {
-
-  // const thisResult = getCurrentPageNumber();
-  updatePageNumber: () => dispatch(getCurrentPageNumber())
-  // dispatch(getMoviesInTheaters(thisResult));
-
-  // }
+  updatePageNumber: pageNumber => dispatch(getCurrentPageNumber(pageNumber)),
+  getMoviesInTheaters: () => dispatch(getMoviesInTheaters(1))
 });
 export default connect(
   mapStateToProps,

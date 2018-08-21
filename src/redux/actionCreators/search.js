@@ -1,30 +1,22 @@
-import { SET_SEARCH_TERM, ADD_API_DATA, GET_MOVIES_IN_THEATERS, INCREMENT } from './../actions';
+import { SET_SEARCH_TERM, GET_MOVIES_IN_THEATERS, INCREMENT } from './../actions';
 import APIConnect from './../../services/api-connect';
 
 export function setSearchTerm(searchTerm) {
   return { type: SET_SEARCH_TERM, payload: searchTerm };
 }
 
-export function addAPIData(apiData) {
-  return { type: ADD_API_DATA, payload: apiData };
-}
-
-export function getCurrentPageNumber(pageNumber) {
-  // console.log('What is this ', number);
-  return { type: INCREMENT, pageNumber };
-}
-
-export function getMoviesInTheaters(currentPageNumber) {
-  console.log('------- currentPageNumber  🔥 🔥 🔥 🔥  ==>', currentPageNumber);
+export function getMoviesInTheaters(currentPageNumber = 1) {
   return dispatch => {
     APIConnect.getNowPlaying(currentPageNumber).then(response => {
-      console.log('----This is the pageNumber ==> ', response.page);
-      console.log('======== getNowPlaying() RESPONSE in actionCreators =====>');
-      console.log(response);
       dispatch({
         type: GET_MOVIES_IN_THEATERS,
         payload: response.results
       });
     });
   };
+}
+
+export function getCurrentPageNumber(pageNumber) {
+  // console.log('What is this ', pageNumber);
+  return { type: INCREMENT, pageNumber };
 }
