@@ -15,6 +15,7 @@ _site/
 
 # Me
 .env
+.npmrc
 WorkFlowLog.md
 haters/
 

@@ -62,13 +62,30 @@ Install packages:
 ```
 yarn install
 ```
-Create .env file in the repo root and set your api key as API_KEY variable:
+
+
+Create a .env file in the repo root and set your api key as API_KEY variable:
 
 ```
 // .env
 API_KEY=12345678901234567890
 ```
 You can request an API key by logging in to your account on [TMDb](https://www.themoviedb.org/login) and clicking the "API" link in the left hand side bar of your account page.
+
+I have FontAwesome Pro, so some icons might not show if you dont create a .npmrc file in the repo root and set your api key as:
+
+
+---
+
+```
+// .npmrc
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken=12345678901234567890
+```
+After making an account and buying a PRO API key, you can click here  [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro) and follow the instructions for setting up your .npmrc file.
+
+---
+
 
 Use webpack-dev-server for local development:
 ```

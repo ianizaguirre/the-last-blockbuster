@@ -70,7 +70,9 @@ const Sidebar = props => {
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/in-theaters`}>
-            <Title>In Theaters</Title>
+            <Title>
+              <IconType icon="ticket" /> In Theaters
+            </Title>
           </Wrap>
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>

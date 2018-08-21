@@ -6,7 +6,7 @@ import type { Match } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTicket } from '@fortawesome/pro-solid-svg-icons';
 
 import store from './redux/store';
 
@@ -22,7 +22,7 @@ import MovieFull from './containers/MovieFull';
 // <Route exact path="/" component={props => <App routes={routes} {...props} />} />;
 // <Route path="/moo" component={MoviesInTheaters} />;
 
-library.add(faHeart);
+library.add(faHeart, faTicket);
 
 const routes = [
   {
