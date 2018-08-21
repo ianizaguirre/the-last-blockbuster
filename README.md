@@ -74,15 +74,16 @@ You can request an API key by logging in to your account on [TMDb](https://www.t
 
 ---
 
-* I have FontAwesome Pro, so some icons might not show if you dont create a .npmrc file in the repo root and set your api key as:
+* I have FontAwesome Pro, so some icons might not show if you dont create a .npmrc file in the repo root and set your personal authToken.
 
+After making an account and buying a PRO authToken, you can click here  [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro) and follow the instructions for setting up your .npmrc file. For Example:
 
 ```
 // .npmrc
 @fortawesome:registry=https://npm.fontawesome.com/
 //npm.fontawesome.com/:_authToken=12345678901234567890
 ```
-After making an account and buying a PRO API key, you can click here  [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers#installing-pro) and follow the instructions for setting up your .npmrc file.
+
 
 ---
 
