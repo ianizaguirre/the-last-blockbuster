@@ -7,23 +7,6 @@ import { getCurrentPageNumber, getMoviesInTheaters } from './../redux/actionCrea
 
 import { connect } from 'react-redux';
 
-// const GridWrapper = styled.div`
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   grid-template-rows: 1fr 1fr;
-//   grid-gap: 6px;
-//   grid-auto-flow: row;
-// `;
-// const GridItem = styled.div`
-//   font-weight: 400;
-//   cursor: pointer;
-//   color: white;
-//   background-color: #fe9700; // TEMP COLOR
-//   font-size: 18px;
-//   justify-self: left;
-//   padding: 0.5em 1em;
-// `;
-
 const TempButton = styled.div`
   font-weight: 400;
   cursor: pointer;
@@ -44,7 +27,7 @@ class Pagination extends Component {
   render() {
     return (
       <Fragment>
-        <p>Pagination Bar Logic Goes Here</p>
+        <p>--- Pagination Component ---</p>
         <TempButton onClick={this.props.updatePageNumber}>NEXT</TempButton>
         <p>{this.props.pageNumber}</p>
       </Fragment>

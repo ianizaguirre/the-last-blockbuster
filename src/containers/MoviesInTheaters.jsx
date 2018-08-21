@@ -8,15 +8,13 @@ import MovieCard from './../components/MovieCard';
 
 import Pagination from './../components/Pagination';
 
-// import Footer from './../components/Footer';
-
 const Gutter = styled.div`
   width: 95%;
   margin: 0 auto;
 `;
 
 const GridContainer = styled.div`
-  border: 10px solid #000000;
+  // border: 10px solid #000000;
   display: grid;
   grid-template-rows: auto;
   grid-gap: 36px;

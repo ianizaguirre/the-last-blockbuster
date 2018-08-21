@@ -50,6 +50,23 @@
 
 &nbsp;
 
+## Screenshots
+
+### Low Fidelity Prototype
+
+<details>
+<summary>Show</summary>
+![low-fidelity-prototype](/public/img/readme/low-fidelity-prototype-1.png?raw=true)
+</details>
+
+
+### In Theaters Page
+
+<details>
+<summary>Show</summary>
+![In-Theaters-Page](/public/img/readme/Temp-ScreenShot-In-Theaters-page.jpg?raw=true)
+</details>
+
 ---
 &nbsp;
 
