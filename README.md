@@ -72,10 +72,10 @@ API_KEY=12345678901234567890
 ```
 You can request an API key by logging in to your account on [TMDb](https://www.themoviedb.org/login) and clicking the "API" link in the left hand side bar of your account page.
 
-I have FontAwesome Pro, so some icons might not show if you dont create a .npmrc file in the repo root and set your api key as:
-
-
 ---
+
+* I have FontAwesome Pro, so some icons might not show if you dont create a .npmrc file in the repo root and set your api key as:
+
 
 ```
 // .npmrc
