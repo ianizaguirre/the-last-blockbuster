@@ -39,9 +39,13 @@ const Wrap = styled(Link)`
   }
 `;
 
-const Title = styled.div`
+const Item = styled.div`
   text-decoration: none;
   grid-column: 2 / -1;
+`;
+
+const Title = styled.span`
+  margin-left: 11px;
 `;
 
 const IconType = styled(Icon)`
@@ -50,9 +54,9 @@ const IconType = styled(Icon)`
 
   color: #ffeeb0;
   stroke: #d7a33f;
-  stroke-width: 70px;
+  stroke-width: 55px;
 `;
-
+// stroke-width: 65px;
 // size = 'lg';
 
 // <div onClick={props.handleCurrentMenuTerm}>YOOOOO</div>
@@ -63,31 +67,42 @@ const Sidebar = props => {
       <Ul>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/`}>
-            <Title>
-              <IconType icon="heart" /> Home
-            </Title>
+            <Item>
+              <IconType icon="heart" />
+              <Title>Home</Title>
+            </Item>
           </Wrap>
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/in-theaters`}>
-            <Title>
-              <IconType icon="ticket" /> In Theaters
-            </Title>
+            <Item>
+              <IconType icon="ticket" />
+              <Title>In Theaters</Title>
+            </Item>
           </Wrap>
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/example`}>
-            <Title>Example</Title>
+            <Item>
+              <IconType icon="eye" />
+              <Title>Watchlist</Title>
+            </Item>
           </Wrap>
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/`}>
-            <Title>Popular</Title>
+            <Item>
+              <IconType icon="thumbs-up" />
+              <Title>Popular</Title>
+            </Item>
           </Wrap>
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/`}>
-            <Title>Settings</Title>
+            <Item>
+              <IconType icon="cog" />
+              <Title>Settings</Title>
+            </Item>
           </Wrap>
         </Li>
       </Ul>
