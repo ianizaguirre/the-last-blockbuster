@@ -9,11 +9,11 @@ export function addAPIData(apiData) {
   return { type: ADD_API_DATA, payload: apiData };
 }
 
-export function getCurrentPageNumber(incPageNumber) {
-  return { type: INCREMENT, payload: incPageNumber };
+export function getCurrentPageNumber() {
+  return { type: INCREMENT };
 }
 
-export function getMoviesInTheaters(currentPageNumber = 2) {
+export function getMoviesInTheaters(currentPageNumber) {
   console.log('------- currentPageNumber  🔥 🔥 🔥 🔥  ==>', currentPageNumber);
   return dispatch => {
     APIConnect.getNowPlaying(currentPageNumber).then(response => {

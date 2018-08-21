@@ -35,7 +35,10 @@ const TempButton = styled.div`
 `;
 class Pagination extends Component {
   // componentDidMount() {
-  //   this.props.getAPIData();
+  //   this.props.getMoviesInTheaters();
+  // }
+  // componentDidMount() {
+  //   this.props.handlePaginationChange();
   // }
 
   render() {
@@ -72,6 +75,7 @@ const mapDispatchToProps = dispatch => ({
   // getAPIData() {
   handlePaginationChange() {
     dispatch(getCurrentPageNumber());
+    // dispatch(getMoviesInTheaters(thisResult));
   }
   // }
 });
