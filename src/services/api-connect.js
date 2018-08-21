@@ -25,9 +25,12 @@ export default {
   // },
 
   // === Movies Now Playing IN Theaters ===
-  getNowPlaying() {
-    return this.apiCall('movie/now_playing', _, `&language=en-US&region=US`);
+  getNowPlaying(pageNumber = 1) {
+    return this.apiCall('movie/now_playing', _, `&language=en-US&region=US&page=${pageNumber}`);
   },
+  // getNowPlaying() {
+  //   return this.apiCall('movie/now_playing', _, `&language=en-US&region=US`);
+  // },
 
   getMovieDetails(movieId) {
     return this.apiCall(`movie/${movieId}`);
