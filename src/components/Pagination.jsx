@@ -45,7 +45,7 @@ class Pagination extends Component {
     return (
       <Fragment>
         <p>Pagination Bar Logic Goes Here</p>
-        <TempButton onClick={this.props.handlePaginationChange}>NEXT</TempButton>
+        <TempButton onClick={this.props.updatePageNumber}>NEXT</TempButton>
         <p>{this.props.pageNumber}</p>
       </Fragment>
     );
@@ -73,10 +73,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   // getAPIData() {
-  handlePaginationChange() {
-    dispatch(getCurrentPageNumber());
-    // dispatch(getMoviesInTheaters(thisResult));
-  }
+
+  // const thisResult = getCurrentPageNumber();
+  updatePageNumber: pageNumber => dispatch(getCurrentPageNumber(pageNumber))
+  // dispatch(getMoviesInTheaters(thisResult));
+
   // }
 });
 export default connect(

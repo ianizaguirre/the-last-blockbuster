@@ -9,8 +9,9 @@ export function addAPIData(apiData) {
   return { type: ADD_API_DATA, payload: apiData };
 }
 
-export function getCurrentPageNumber() {
-  return { type: INCREMENT };
+export function getCurrentPageNumber(somePageNumber) {
+  // console.log('What is this ', number);
+  return { type: INCREMENT, payload: somePageNumber };
 }
 
 export function getMoviesInTheaters(currentPageNumber) {
