@@ -75,7 +75,7 @@ const mapDispatchToProps = dispatch => ({
   // getAPIData() {
 
   // const thisResult = getCurrentPageNumber();
-  updatePageNumber: pageNumber => dispatch(getCurrentPageNumber(pageNumber))
+  updatePageNumber: () => dispatch(getCurrentPageNumber())
   // dispatch(getMoviesInTheaters(thisResult));
 
   // }
