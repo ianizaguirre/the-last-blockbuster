@@ -2,6 +2,9 @@
 import React, { Fragment } from 'react';
 // import { BrowserRouter as Router, Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
@@ -41,6 +44,17 @@ const Title = styled.div`
   grid-column: 2 / -1;
 `;
 
+const IconType = styled(Icon)`
+  font-size: 1.33333em;
+  line-height: 0.75em;
+
+  color: #ffeeb0;
+  stroke: #d7a33f;
+  stroke-width: 70px;
+`;
+
+// size = 'lg';
+
 // <div onClick={props.handleCurrentMenuTerm}>YOOOOO</div>
 
 const Sidebar = props => {
@@ -49,7 +63,9 @@ const Sidebar = props => {
       <Ul>
         <Li onClick={props.handleCurrentMenuTerm}>
           <Wrap to={`/`}>
-            <Title>Home</Title>
+            <Title>
+              <IconType icon="heart" /> Home
+            </Title>
           </Wrap>
         </Li>
         <Li onClick={props.handleCurrentMenuTerm}>

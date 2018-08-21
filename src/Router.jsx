@@ -3,8 +3,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import type { Match } from 'react-router-dom';
-
 import { Provider } from 'react-redux';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 import store from './redux/store';
 
 import Showcase from './components/Showcase';
@@ -18,6 +21,8 @@ import MovieFull from './containers/MovieFull';
 // <Route exact path="/" component={App} />;
 // <Route exact path="/" component={props => <App routes={routes} {...props} />} />;
 // <Route path="/moo" component={MoviesInTheaters} />;
+
+library.add(faHeart);
 
 const routes = [
   {
