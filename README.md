@@ -56,7 +56,7 @@
 
 <details>
 <summary>Show</summary>
-![low-fidelity-prototype](/public/img/readme/low-fidelity-prototype-1.png?raw=true)
+![low-fidelity-prototype-1](/public/img/readme/low-fidelity-prototype-1.png?raw=true)
 </details>
 
 
@@ -64,9 +64,10 @@
 
 <details>
 <summary>Show</summary>
-![In-Theaters-Page](/public/img/readme/Temp-ScreenShot-In-Theaters-page.jpg?raw=true)
+![Temp-ScreenShot-In-Theaters-page](/public/img/readme/Temp-ScreenShot-In-Theaters-page.jpg?raw=true)
 </details>
 
+&nbsp;
 ---
 &nbsp;
 
