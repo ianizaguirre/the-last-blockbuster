@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getAPIData() {
-    dispatch(getMoviesInTheaters());
+    dispatch(getMoviesInTheaters(3));
   }
 });
 

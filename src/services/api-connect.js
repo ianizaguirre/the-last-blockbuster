@@ -17,7 +17,7 @@ export default {
 
     return fetch(url, { method })
       .then(response => response.json())
-      .catch(e => console.log(e));
+      .catch(error => console.log(error));
   },
 
   // getUpcomingMovies() {

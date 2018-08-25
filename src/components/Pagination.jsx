@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
 // import { getMoviesInTheaters } from './../redux/actionCreators/search';
-import { getCurrentPageNumber, getMoviesInTheaters } from './../redux/actionCreators/search';
+import { getCurrentPageNumber } from './../redux/actionCreators/search';
 
 import { connect } from 'react-redux';
 
@@ -63,8 +63,8 @@ const mapStateToProps = state => ({
 // });
 
 const mapDispatchToProps = dispatch => ({
-  updatePageNumber: pageNumber => dispatch(getCurrentPageNumber(pageNumber)),
-  getMoviesInTheaters: () => dispatch(getMoviesInTheaters(1))
+  updatePageNumber: () => dispatch(getCurrentPageNumber())
+  // getMoviesInTheaters: () => dispatch(getMoviesInTheaters(2))
 });
 export default connect(
   mapStateToProps,
