@@ -1,4 +1,4 @@
-import { SET_SEARCH_TERM, GET_MOVIES_IN_THEATERS, INCREMENT } from './../actions';
+import { SET_SEARCH_TERM, GET_MOVIES_IN_THEATERS, INCREMENT, DECREMENT } from './../actions';
 import APIConnect from './../../services/api-connect';
 
 export function setSearchTerm(searchTerm) {
@@ -8,6 +8,8 @@ export function setSearchTerm(searchTerm) {
 export function getMoviesInTheaters(currentPageNumber = 1) {
   return dispatch => {
     APIConnect.getNowPlaying(currentPageNumber).then(response => {
+      console.log(response);
+
       dispatch({
         type: GET_MOVIES_IN_THEATERS,
         payload: response.results
@@ -16,7 +18,10 @@ export function getMoviesInTheaters(currentPageNumber = 1) {
   };
 }
 
-export function getCurrentPageNumber(pageNumber) {
+export function incrementPageNumber(pageNumber) {
   // console.log('What is this ', pageNumber);
   return { type: INCREMENT, pageNumber };
+}
+export function decrementPageNumber(pageNumber) {
+  return { type: DECREMENT, pageNumber };
 }

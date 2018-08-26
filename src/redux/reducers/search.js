@@ -1,5 +1,5 @@
 // @flow
-import { SET_SEARCH_TERM, GET_MOVIES_IN_THEATERS, INCREMENT } from './../actions';
+import { SET_SEARCH_TERM, GET_MOVIES_IN_THEATERS, INCREMENT, DECREMENT } from './../actions';
 
 export const searchTerm = (state = '', action: Action) => {
   if (action.type === SET_SEARCH_TERM) {
@@ -25,6 +25,11 @@ export const movies = (state = initialState, action) => {
       return {
         ...state,
         pageNumber: state.pageNumber + 1
+      };
+    case DECREMENT:
+      return {
+        ...state,
+        pageNumber: state.pageNumber - 1
       };
     default:
       return state;

@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
-import { getCurrentPageNumber } from './../redux/actionCreators/search';
+import { incrementPageNumber, decrementPageNumber } from './../redux/actionCreators/search';
 
 import { connect } from 'react-redux';
 
@@ -15,12 +15,15 @@ const TempButton = styled.div`
   padding: 0.5em 1em;
   width: 150px;
 `;
+
 class Pagination extends Component {
   render() {
     return (
       <Fragment>
         <p>--- Pagination Component ---</p>
-        <TempButton onClick={this.props.updatePageNumber}>NEXT</TempButton>
+        <TempButton onClick={this.props.increasePageNumber}>NEXT</TempButton>
+        <br />
+        <TempButton onClick={this.props.decreasePageNumber}>BACK</TempButton>
         <p>{this.props.pageNumber}</p>
       </Fragment>
     );
@@ -32,7 +35,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updatePageNumber: () => dispatch(getCurrentPageNumber())
+  increasePageNumber: () => dispatch(incrementPageNumber()),
+  decreasePageNumber: () => dispatch(decrementPageNumber())
 });
 
 export default connect(
