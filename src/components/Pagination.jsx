@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
@@ -14,30 +14,85 @@ const IconType = styled(Icon)`
   line-height: 0.75em;
 
   color: ${props => props.theme.bgLight};
-  display: ${props => (props.hideBackButton ? 'none' : 'inline-block')};
+  display: ${props => (props.hidebutton ? 'none' : 'inline-block')};
+
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
-/* ====
-IF this.props.pageNumber is === 0
-Hide --> <TempButton onClick={this.props.decreasePageNumber}>BACK</TempButton>
-==== */
+const Wrapper = styled.div`
+  width: 95%;
+  margin: 0 auto;
+`;
+
+const GridContainer = styled.div`
+  border: 10px solid #46a5e5;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: auto;
+  // grid-gap: 36px;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  // justify-items: center;
+
+  // margin-top: 30px;
+  // margin-bottom: 30px;
+`;
+// ============
+
+const GroupLeft = styled.div`
+  // grid-column: 2 / -1;
+  justify-self: start;
+`;
+
+const TempItem = styled.div`
+  font-size: 0.9em;
+`;
+
+// ===========
+
+const GroupRight = styled.div`
+  justify-self: end;
+
+  border: 10px solid #46a545;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 13px;
+`;
+
+const ArrowIconLeft = styled.div`
+  // justify-self: end;
+`;
+const ArrowIconRight = styled.div`
+  // justify-self: end;
+`;
 
 class Pagination extends Component {
   render() {
     return (
-      <Fragment>
-        <p>--- Pagination Component ---</p>
-        <IconType icon="arrow-alt-circle-right" onClick={this.props.increasePageNumber} />
-        <br />
-        <IconType
-          icon="arrow-alt-circle-left"
-          hideBackButton={this.props.pageNumber === 1}
-          onClick={this.props.decreasePageNumber}
-        />
-        <br />
-        <p>Currently on page: {this.props.pageNumber}</p>
-        <br />
-      </Fragment>
+      <Wrapper>
+        <GridContainer>
+          <GroupLeft>
+            <TempItem>Currently on page: {this.props.pageNumber}</TempItem>
+          </GroupLeft>
+
+          <GroupRight>
+            <ArrowIconLeft>
+              <IconType
+                icon="arrow-alt-circle-left"
+                hidebutton={this.props.pageNumber === 1}
+                onClick={this.props.decreasePageNumber}
+              />
+            </ArrowIconLeft>
+            <ArrowIconRight>
+              <IconType icon="arrow-alt-circle-right" onClick={this.props.increasePageNumber} />
+            </ArrowIconRight>
+          </GroupRight>
+        </GridContainer>
+      </Wrapper>
     );
   }
 }
