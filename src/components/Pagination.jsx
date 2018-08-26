@@ -14,7 +14,13 @@ const TempButton = styled.div`
   font-size: 18px;
   padding: 0.5em 1em;
   width: 150px;
+  display: ${props => (props.hideBackButton ? 'none' : 'inline-block')};
 `;
+
+/* ====
+IF this.props.pageNumber is === 0
+Hide --> <TempButton onClick={this.props.decreasePageNumber}>BACK</TempButton>
+==== */
 
 class Pagination extends Component {
   render() {
@@ -23,7 +29,9 @@ class Pagination extends Component {
         <p>--- Pagination Component ---</p>
         <TempButton onClick={this.props.increasePageNumber}>NEXT</TempButton>
         <br />
-        <TempButton onClick={this.props.decreasePageNumber}>BACK</TempButton>
+        <TempButton hideBackButton={this.props.pageNumber === 1} onClick={this.props.decreasePageNumber}>
+          BACK
+        </TempButton>
         <p>{this.props.pageNumber}</p>
       </Fragment>
     );
