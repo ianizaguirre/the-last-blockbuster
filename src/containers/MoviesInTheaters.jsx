@@ -14,7 +14,7 @@ const Gutter = styled.div`
 `;
 
 const GridContainer = styled.div`
-  // border: 10px solid #000000;
+  border: 10px solid #000000;
   display: grid;
   grid-template-rows: auto;
   grid-gap: 36px;

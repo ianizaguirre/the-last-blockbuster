@@ -2,18 +2,18 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+
 import { incrementPageNumber, decrementPageNumber } from './../redux/actionCreators/search';
 
 import { connect } from 'react-redux';
 
-const TempButton = styled.div`
-  font-weight: 400;
+const IconType = styled(Icon)`
   cursor: pointer;
-  color: white;
-  background-color: #fe9700; // TEMP COLOR
-  font-size: 18px;
-  padding: 0.5em 1em;
-  width: 150px;
+  font-size: 1.8em;
+  line-height: 0.75em;
+
+  color: ${props => props.theme.bgLight};
   display: ${props => (props.hideBackButton ? 'none' : 'inline-block')};
 `;
 
@@ -27,12 +27,16 @@ class Pagination extends Component {
     return (
       <Fragment>
         <p>--- Pagination Component ---</p>
-        <TempButton onClick={this.props.increasePageNumber}>NEXT</TempButton>
+        <IconType icon="arrow-alt-circle-right" onClick={this.props.increasePageNumber} />
         <br />
-        <TempButton hideBackButton={this.props.pageNumber === 1} onClick={this.props.decreasePageNumber}>
-          BACK
-        </TempButton>
-        <p>{this.props.pageNumber}</p>
+        <IconType
+          icon="arrow-alt-circle-left"
+          hideBackButton={this.props.pageNumber === 1}
+          onClick={this.props.decreasePageNumber}
+        />
+        <br />
+        <p>Currently on page: {this.props.pageNumber}</p>
+        <br />
       </Fragment>
     );
   }
