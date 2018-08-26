@@ -28,7 +28,13 @@ const GridContainer = styled.div`
 
 class MoviesInTheaters extends Component {
   componentDidMount() {
-    this.props.getAPIData();
+    this.props.getAPIData(this.props.pageNumber);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.pageNumber !== prevProps.pageNumber) {
+      this.props.getAPIData(this.props.pageNumber);
+    }
   }
 
   render() {
@@ -51,14 +57,15 @@ class MoviesInTheaters extends Component {
 
 const mapStateToProps = state => ({
   searchTerm: state.searchTerm,
-  movies: state.movies.initialLoad
+  movies: state.movies.initialLoad,
+  pageNumber: state.movies.pageNumber
 });
 
 // movies: state.movies.initialLoad;
 
 const mapDispatchToProps = dispatch => ({
-  getAPIData() {
-    dispatch(getMoviesInTheaters(3));
+  getAPIData(pageNumber) {
+    dispatch(getMoviesInTheaters(pageNumber));
   }
 });
 

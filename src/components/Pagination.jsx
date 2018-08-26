@@ -2,7 +2,6 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
-// import { getMoviesInTheaters } from './../redux/actionCreators/search';
 import { getCurrentPageNumber } from './../redux/actionCreators/search';
 
 import { connect } from 'react-redux';
@@ -17,13 +16,6 @@ const TempButton = styled.div`
   width: 150px;
 `;
 class Pagination extends Component {
-  // componentDidMount() {
-  //   this.props.getMoviesInTheaters();
-  // }
-  // componentDidMount() {
-  //   this.props.handlePaginationChange();
-  // }
-
   render() {
     return (
       <Fragment>
@@ -39,33 +31,10 @@ const mapStateToProps = state => ({
   pageNumber: state.movies.pageNumber
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   getAPIData() {
-//     // handlePaginationChange() {
-//     dispatch(getMoviesInTheaters());
-//     // }
-//   }
-// });
-
-// export default Pagination;
-// export default connect(
-//   // mapStateToProps,
-//   null,
-//   mapDispatchToProps
-// )(Pagination);
-
-// const mapDispatchToProps = dispatch => ({
-//   updatePageNumber: () => dispatch(getCurrentPageNumber())
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   updatePageNumber: pageNumber => dispatch(getCurrentPageNumber(pageNumber))
-// });
-
 const mapDispatchToProps = dispatch => ({
   updatePageNumber: () => dispatch(getCurrentPageNumber())
-  // getMoviesInTheaters: () => dispatch(getMoviesInTheaters(2))
 });
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
