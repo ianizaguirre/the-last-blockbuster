@@ -12,7 +12,7 @@ const GridWrapper = styled.div`
 `;
 const GridItem = styled.div`
   font-weight: 400;
-  cursor: pointer;
+  // cursor: pointer;
   color: white;
   background-color: #fe9700; // TEMP COLOR
   font-size: 18px;

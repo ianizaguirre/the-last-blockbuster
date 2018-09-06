@@ -3,7 +3,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import type { Match } from 'react-router-dom';
-import { Provider } from 'react-redux';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faEye, faCog } from '@fortawesome/pro-light-svg-icons';
@@ -17,8 +16,6 @@ import {
   faArrowAltCircleRight,
   faArrowAltCircleLeft
 } from '@fortawesome/pro-solid-svg-icons';
-
-import store from './redux/store';
 
 import Showcase from './components/Showcase';
 import SidePanel from './components/SidePanel';
@@ -69,24 +66,22 @@ const routes = [
 const FourOhFour = () => <h1>404</h1>;
 
 const Router = () => (
-  <Provider store={store}>
-    <Switch>
-      <Route
-        exact
-        path="/"
-        component={props => {
-          const handleMain = routes.map(route => (
-            <Route key={route.path} path={route.path} exact={route.exact} component={route.main} />
-          ));
-          const handleSidebar = routes.map(route => (
-            <Route key={route.path} path={route.path} exact={route.exact} component={route.sidebar} />
-          ));
-          return <Showcase mainContent={handleMain} sidePanel={handleSidebar} {...props} />;
-        }}
-      />;
-      <Route component={FourOhFour} />
-    </Switch>
-  </Provider>
+  <Switch>
+    <Route
+      exact
+      path="/"
+      component={props => {
+        const handleMain = routes.map(route => (
+          <Route key={route.path} path={route.path} exact={route.exact} component={route.main} />
+        ));
+        const handleSidebar = routes.map(route => (
+          <Route key={route.path} path={route.path} exact={route.exact} component={route.sidebar} />
+        ));
+        return <Showcase mainContent={handleMain} sidePanel={handleSidebar} {...props} />;
+      }}
+    />;
+    <Route component={FourOhFour} />
+  </Switch>
 );
 
 export default Router;

@@ -2,8 +2,10 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, injectGlobal } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import theme from './theme';
 import Router from './Router';
 
@@ -33,9 +35,11 @@ injectGlobal`
 const renderApp = () => {
   render(
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </Provider>
     </ThemeProvider>,
     document.getElementById('app')
   );
