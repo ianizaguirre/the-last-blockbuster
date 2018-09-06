@@ -26,8 +26,18 @@ export default {
 
   // === Movies Now Playing IN Theaters ===
   getNowPlaying(pageNumber = 1) {
-    return this.apiCall('movie/now_playing', _, `&language=en-US&region=US&page=${pageNumber}`);
+    return this.apiCall(
+      'discover/movie',
+      _,
+      `&release_date.gte=2018-08-01&release_date.lte=2018-08-24&region=US&with_release_type=3|2&with_original_language=en&page=${pageNumber}`
+    );
   },
+  //========================================
+  // === Movies Now Playing IN Theaters === OLD CALL with no Discover
+  // getNowPlaying(pageNumber = 1) {
+  //   return this.apiCall('movie/now_playing', _, `&language=en-US&region=US&page=${pageNumber}`);
+  // },
+  //========================================
   // getNowPlaying() {
   //   return this.apiCall('movie/now_playing', _, `&language=en-US&region=US`);
   // },
