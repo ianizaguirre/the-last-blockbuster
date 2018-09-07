@@ -1,4 +1,5 @@
 /* eslint-disable */
+import dateRange from './../utils/nowPlayingDateRange';
 
 const _ = undefined;
 const api_key = process.env.API_KEY;
@@ -29,7 +30,7 @@ export default {
     return this.apiCall(
       'discover/movie',
       _,
-      `&release_date.gte=2018-08-01&release_date.lte=2018-08-24&region=US&with_release_type=3|2&with_original_language=en&page=${pageNumber}`
+      `&${dateRange}&region=US&with_release_type=3|2&without_genres=10770|99&with_original_language=en&page=${pageNumber}`
     );
   },
   //========================================

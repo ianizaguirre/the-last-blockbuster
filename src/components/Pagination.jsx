@@ -88,7 +88,11 @@ class Pagination extends Component {
               />
             </ArrowIconLeft>
             <ArrowIconRight>
-              <IconType icon="arrow-alt-circle-right" onClick={this.props.increasePageNumber} />
+              <IconType
+                icon="arrow-alt-circle-right"
+                hidebutton={this.props.pageNumber >= 2}
+                onClick={this.props.increasePageNumber}
+              />
             </ArrowIconRight>
           </GroupRight>
         </GridContainer>
